@@ -1,0 +1,18 @@
+# dependencies
+node_modules/
+# build artifacts (PDF ساخته‌شده در ریشه نگه داشته می‌شود)
+examples/**/dist/
+examples/snippets/
+__pycache__/
+*.pyc
+# os / editor
+.DS_Store
+Thumbs.db
+
+# internal build pipeline & sources (kept locally, not published)
+scripts/
+styles/
+content/
+assets/
+reports/
+book.json
