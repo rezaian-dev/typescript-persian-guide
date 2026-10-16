@@ -53,6 +53,7 @@ section{padding:72px 0}
 .coverbox img:hover{transform:rotate(0) scale(1.02)}
 .float{position:absolute;background:rgba(15,24,48,.92);border:1px solid var(--line);backdrop-filter:blur(4px);border-radius:12px;padding:8px 16px;font-size:.8rem;color:#D6DEED;box-shadow:0 10px 30px rgba(0,0,0,.4)}
 .float b{color:var(--gold2)}
+.float .i{color:var(--gold2)}
 .f1{top:8%;right:-2%}.f2{bottom:14%;left:-2%}.f3{top:48%;left:-6%}
 /* ───── stats ───── */
 .stats{background:var(--ink);border-block:1px solid var(--line)}
@@ -69,14 +70,16 @@ section{padding:72px 0}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 24px;transition:.25s}
 .card:hover{border-color:rgba(202,138,4,.5);transform:translateY(-4px)}
-.card .ico{font-size:1.5rem;margin-bottom:10px}
+.card .ico{margin-bottom:12px;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:rgba(202,138,4,.12);border:1px solid rgba(202,138,4,.3);color:var(--gold2)}.card .ico .i{width:22px;height:22px}
 .card h3{color:#fff;font-size:1.02rem;font-weight:700;margin-bottom:8px}
+.step h3 .i{color:var(--gold2)}
 .card p{font-size:.86rem;color:var(--mut)}
 .card p code{background:#131D36;border:1px solid var(--line);border-radius:5px;padding:.05em .4em;font-size:.84em;color:#9CC8F7}
 /* ───── path ───── */
 .path .cards{grid-template-columns:repeat(4,1fr)}
 .step .no{font-family:Vazirmatn,system-ui,sans-serif;font-size:1.6rem;color:rgba(227,179,65,.35);font-weight:700;direction:ltr}
 .step .rng{font-size:.74rem;color:var(--gold2);margin-bottom:6px}
+.step .goal .i{color:var(--gold2);width:.9em;height:.9em}
 .step .goal{margin-top:10px;font-size:.78rem;color:#B9C6DC;border-top:1px dashed var(--line);padding-top:10px}
 /* ───── previews ───── */
 .shots{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
@@ -88,6 +91,7 @@ section{padding:72px 0}
 details.part{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
 details.part summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:14px;padding:18px 22px;font-weight:700;color:#fff}
 details.part summary::-webkit-details-marker{display:none}
+details.part summary .pico .i{color:var(--gold2);width:1.1em;height:1.1em}
 details.part summary .mark{font-family:Vazirmatn,system-ui,sans-serif;color:var(--gold2);font-size:.8rem;direction:ltr}
 details.part summary .cnt{margin-inline-start:auto;font-size:.74rem;color:var(--mut2);font-family:Vazirmatn,system-ui,sans-serif;direction:ltr}
 details.part[open] summary{border-bottom:1px solid var(--line)}
@@ -100,7 +104,8 @@ details.part[open] summary{border-bottom:1px solid var(--line)}
 .eds{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
 .ed{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;transition:.25s}
 .ed:hover{border-color:rgba(202,138,4,.5);transform:translateY(-4px)}
-.ed h3{color:#fff;margin-bottom:6px}
+.ed h3{color:#fff;margin-bottom:6px;display:flex;align-items:center;gap:9px}
+.ed h3 .i{color:var(--gold2)}
 .ed p{font-size:.84rem;color:var(--mut);flex:1}
 .ed .meta{font-size:.72rem;color:var(--mut2);margin:12px 0;font-family:Vazirmatn,system-ui,sans-serif;direction:ltr}
 .ed .btn{justify-content:center}
@@ -122,10 +127,54 @@ details.part[open] summary{border-bottom:1px solid var(--line)}
 .author .skills{font-family:Vazirmatn,system-ui,sans-serif;font-size:.75rem;color:var(--blue);direction:ltr;margin:4px 0 10px}
 .author p{color:var(--mut);font-size:.9rem;max-width:560px}
 .author .links{margin-top:14px;display:flex;gap:12px;flex-wrap:wrap}
-.author .links a{border:1px solid var(--line);border-radius:10px;padding:7px 18px;font-size:.82rem;transition:.2s}
+.author .links a{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:7px 18px;font-size:.82rem;transition:.2s}
+.author .links a .i{color:var(--gold2)}
 .author .links a:hover{border-color:var(--gold2);color:var(--gold2)}
 footer{padding:34px 0;text-align:center;font-size:.78rem;color:var(--mut2)}
 footer a{color:var(--mut)}
+
+/* ── icons ── */
+.i{width:1.05em;height:1.05em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.18em;flex-shrink:0}
+.i.f{fill:currentColor;stroke:none}
+/* ── header ── */
+.topnav{position:sticky;top:0;z-index:40;background:rgba(17,26,48,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.navrow{display:flex;align-items:center;gap:18px;height:62px}
+.brand{display:flex;align-items:center;gap:10px;font-size:.95rem;color:#fff;white-space:nowrap}
+.brand b{color:var(--gold2)}
+.tsb{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:var(--blue);color:#fff;font-weight:800;font-size:.85rem;direction:ltr}
+.navlinks{display:flex;gap:4px;margin-inline-start:auto}
+.navlinks a{display:flex;align-items:center;gap:6px;padding:7px 11px;border-radius:9px;font-size:.84rem;color:var(--mut);transition:.18s}
+.navlinks a:hover{color:#fff;background:#131D36}
+.navlinks a .i{width:.95em;height:.95em;color:var(--gold2)}
+.navcta{display:flex;align-items:center;gap:8px}
+.btn.mini{padding:8px 16px;font-size:.84rem;border-radius:10px}
+.btn.icon-only{padding:8px 11px}
+.burger{display:none;border:1px solid var(--line);background:#131D36;color:#D6DEED;border-radius:9px;padding:8px 10px;cursor:pointer}
+.mmenu{display:none;flex-direction:column;gap:2px;padding:10px 16px 16px;border-top:1px solid var(--line)}
+.mmenu.open{display:flex}
+.mmenu a{display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:10px;font-size:.92rem;color:#C3CEE2}
+.mmenu a:hover{background:#131D36;color:#fff}
+.mmenu a .i{color:var(--gold2)}
+.mmenu a.hl{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a1405;font-weight:700;margin-top:6px}
+.mmenu a.hl .i{color:#1a1405}
+section[id],div[id].author{scroll-margin-top:76px}
+/* ── footer ── */
+.bigfoot{background:#0D1527;border-top:1px solid var(--line)}
+.bigfoot .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding:56px 0 40px}
+.bigfoot h4{color:#fff;font-size:.95rem;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.bigfoot h4 .i{color:var(--gold2)}
+.bigfoot .about p{font-size:.84rem;color:var(--mut);margin-top:12px;max-width:340px}
+.bigfoot .social{display:flex;gap:10px;margin-top:16px}
+.bigfoot .social a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid var(--line);border-radius:10px;color:var(--mut);transition:.2s}
+.bigfoot .social a:hover{color:var(--gold2);border-color:var(--gold2);transform:translateY(-2px)}
+.flinks{display:flex;flex-direction:column;gap:4px}
+.flinks a{display:flex;align-items:center;gap:9px;padding:6px 0;font-size:.85rem;color:var(--mut);transition:.18s}
+.flinks a:hover{color:var(--gold2)}
+.flinks a .i{width:.95em;height:.95em;color:#5B6B8C;transition:.18s}
+.flinks a:hover .i{color:var(--gold2)}
+.botbar{border-top:1px solid var(--line);padding:18px 0;display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:space-between;font-size:.76rem;color:var(--mut2)}
+.botbar .made{display:flex;align-items:center;gap:6px}
+.botbar .made .i{color:#E5484D;fill:#E5484D;stroke:none;width:.9em;height:.9em}
 /* lightbox */
 #lb{position:fixed;inset:0;background:rgba(5,9,20,.92);display:none;align-items:center;justify-content:center;z-index:50;cursor:zoom-out;padding:24px}
 #lb img{max-width:min(860px,96vw);max-height:92vh;border-radius:10px;box-shadow:0 20px 70px rgba(0,0,0,.6)}
@@ -138,6 +187,10 @@ footer a{color:var(--mut)}
 }
 /* ── tablets portrait ── */
 @media(max-width:920px){
+  .navlinks{display:none}
+  .burger{display:inline-flex}
+  .btn.mini.gold{display:none}
+  .bigfoot .cols{grid-template-columns:1fr 1fr;gap:28px;padding:44px 0 32px}
   section{padding:56px 0}
   .hero{padding:64px 0 48px}
   .hero .grid{grid-template-columns:1fr;gap:36px;text-align:center}
@@ -151,6 +204,11 @@ footer a{color:var(--mut)}
 }
 /* ── phones ── */
 @media(max-width:560px){
+  .navrow{height:56px;gap:10px}
+  .brand{font-size:.86rem}
+  .tsb{width:30px;height:30px;font-size:.78rem}
+  .bigfoot .cols{grid-template-columns:1fr;gap:26px}
+  .botbar{justify-content:center;text-align:center}
   .wrap{padding:0 16px}
   section{padding:44px 0}
   .hero{padding:48px 0 40px}
@@ -184,6 +242,68 @@ footer a{color:var(--mut)}
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-book-open" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+<symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.16 1.18a11 11 0 0 1 5.76 0c2.19-1.49 3.15-1.18 3.15-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.26 5.66.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></symbol>
+<symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol>
+<symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></symbol>
+<symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+<symbol id="i-sprout" viewBox="0 0 24 24"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></symbol>
+<symbol id="i-blocks" viewBox="0 0 24 24"><rect x="14" y="3" width="7" height="7" rx="1"/><path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3"/></symbol>
+<symbol id="i-building" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4M10 10h4M10 14h4M10 18h4"/></symbol>
+<symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+<symbol id="i-flask" viewBox="0 0 24 24"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16.5h10"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+<symbol id="i-bug" viewBox="0 0 24 24"><path d="m8 2 1.88 1.88M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+<symbol id="i-map" viewBox="0 0 24 24"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></symbol>
+<symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></symbol>
+<symbol id="i-package" viewBox="0 0 24 24"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></symbol>
+</defs>
+</svg>
+
+<!-- HEADER -->
+<nav class="topnav" id="top">
+  <div class="wrap navrow">
+    <a class="brand" href="#top"><span class="tsb">TS</span><span>مرجع جامع <b>TypeScript</b></span></a>
+    <div class="navlinks" id="navlinks">
+      <a href="#features"><svg class="i"><use href="#i-star"/></svg> ویژگی‌ها</a>
+      <a href="#path"><svg class="i"><use href="#i-map"/></svg> مسیر یادگیری</a>
+      <a href="#preview"><svg class="i"><use href="#i-image"/></svg> پیش‌نمایش</a>
+      <a href="#chapters"><svg class="i"><use href="#i-list"/></svg> فصل‌ها</a>
+      <a href="#editions"><svg class="i"><use href="#i-package"/></svg> نسخه‌ها</a>
+      <a href="#author"><svg class="i"><use href="#i-user"/></svg> نویسنده</a>
+    </div>
+    <div class="navcta">
+      <a class="btn mini gold" href="book/"><svg class="i"><use href="#i-book-open"/></svg> مطالعه</a>
+      <a class="btn mini ghost icon-only" href="https://github.com/rezaian-dev/typescript-persian-guide" aria-label="GitHub"><svg class="i f"><use href="#i-github"/></svg></a>
+      <button class="burger" id="burger" aria-label="منو"><svg class="i"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+  <div class="mmenu" id="mmenu">
+    <a href="#features"><svg class="i"><use href="#i-star"/></svg> ویژگی‌ها</a>
+    <a href="#path"><svg class="i"><use href="#i-map"/></svg> مسیر یادگیری</a>
+    <a href="#preview"><svg class="i"><use href="#i-image"/></svg> پیش‌نمایش</a>
+    <a href="#chapters"><svg class="i"><use href="#i-list"/></svg> فصل‌ها</a>
+    <a href="#editions"><svg class="i"><use href="#i-package"/></svg> نسخه‌ها</a>
+    <a href="#author"><svg class="i"><use href="#i-user"/></svg> نویسنده</a>
+    <a class="hl" href="book/"><svg class="i"><use href="#i-book-open"/></svg> مطالعه آنلاین</a>
+    <a href="pdf/TypeScript-Persian-Guide.pdf" download><svg class="i"><use href="#i-download"/></svg> دانلود PDF</a>
+  </div>
+</nav>
+
 <!-- HERO -->
 <header class="hero">
   <div class="wrap grid">
@@ -196,16 +316,16 @@ footer a{color:var(--mut)}
       <h1>مرجع جامع <span class="ts">TypeScript</span><br/>از مدل ذهنی تا مهندسی Production</h1>
       <p class="lede">یاد می‌گیری کامپایلر چطور فکر می‌کند: چرا <code>widening</code> رخ می‌دهد، چرا <code>Omit</code> روی union توزیع نمی‌شود و چطور نوع‌ها را به ابزار مهندسی تبدیل کنی — ۴۰ فصل، ۲۲۰ صفحه، هر فصل با بخش «زیر کاپوت».</p>
       <div class="cta">
-        <a class="btn gold" href="book/">📖 مطالعه آنلاین</a>
-        <a class="btn ghost" href="pdf/TypeScript-Persian-Guide.pdf" download>⬇️ دانلود PDF</a>
+        <a class="btn gold" href="book/"><svg class="i"><use href="#i-book-open"/></svg> مطالعه آنلاین</a>
+        <a class="btn ghost" href="pdf/TypeScript-Persian-Guide.pdf" download><svg class="i"><use href="#i-download"/></svg> دانلود PDF</a>
       </div>
       <p class="note">۴۰ فصل در ۴ بخش · PDF رنگی A4 قابل جست‌وجو · هر ۱۸۶ قطعه‌کد با کامپایلر رسمی راستی‌آزمایی شده</p>
     </div>
     <div class="coverbox">
       <img src="cover.png" alt="جلد کتاب مرجع جامع TypeScript"/>
-      <span class="float f1">📖 <b>۴۰</b> فصل</span>
-      <span class="float f2">💛 رایگان</span>
-      <span class="float f3">🧪 <b>۸</b> پروژه</span>
+      <span class="float f1"><svg class="i"><use href="#i-book"/></svg> <b>۴۰</b> فصل</span>
+      <span class="float f2"><svg class="i"><use href="#i-heart"/></svg> رایگان</span>
+      <span class="float f3"><svg class="i"><use href="#i-flask"/></svg> <b>۸</b> پروژه</span>
     </div>
   </div>
 </header>
@@ -225,39 +345,39 @@ footer a{color:var(--mut)}
 <div class="marquee"><div class="track" id="mq"></div></div>
 
 <!-- FEATURES -->
-<section>
+<section id="features">
   <div class="wrap">
     <div class="kicker">Why this book</div>
     <h2 class="sec">مدل ذهنی، نه حفظ قاعده</h2>
     <p class="sec-sub">هر مفهوم اول روی مدل کامپایلر می‌نشیند؛ بعد در کد راستی‌آزمایی‌شده و پروژه واقعی پیاده می‌شود.</p>
     <div class="cards">
-      <div class="card"><div class="ico">🔍</div><h3>زیر کاپوت کامپایلر</h3><p>هر ۴۰ فصل بخش «زیر کاپوت — چرا این‌طور است؟» دارد: freshness و widening، گراف جریان کنترل، variance و منطق مجموعه‌ای نوع‌ها.</p></div>
-      <div class="card"><div class="ico">✅</div><h3>کد راستی‌آزمایی‌شده</h3><p>هر ۱۸۶ قطعه‌کد با <code>tsc</code> رسمی بررسی شده — روی TypeScript 7.0.2 و 6.0.3 با صفر خطا؛ خطاهای عمدی هم با پیام واقعی کامپایلر آمده‌اند.</p></div>
-      <div class="card"><div class="ico">⚡</div><h3>همگام با TypeScript 7</h3><p>کامپایلر native جدید، گذار ۶ به ۷، <code>NoInfer</code>، const type parameters و satisfies — با مرزبندی روشن زبان و پیاده‌سازی.</p></div>
-      <div class="card"><div class="ico">🧬</div><h3>طراحی نوع پیشرفته</h3><p>conditional و mapped types، template literals، type-level programming با مرز مهندسی مشخص: کِی بسازیم و کِی نه.</p></div>
-      <div class="card"><div class="ico">🏗️</div><h3>Production واقعی</h3><p>اعتبارسنجی مرزی با Zod، الگوی Result، ماشین حالت تایپ‌شده، React و Next.js، انتشار پکیج — با ۸ پروژه کامل.</p></div>
-      <div class="card"><div class="ico">💼</div><h3>آمادگی مصاحبه</h3><p>+۱۳۰ پرسش با پاسخ تشریحی: دو پرسش تخصصی در پایان هر فصل و ۵۰ پرسش سطح‌بندی‌شده از Junior تا Senior در پیوست.</p></div>
+      <div class="card"><div class="ico"><svg class="i"><use href="#i-cpu"/></svg></div><h3>زیر کاپوت کامپایلر</h3><p>هر ۴۰ فصل بخش «زیر کاپوت — چرا این‌طور است؟» دارد: freshness و widening، گراف جریان کنترل، variance و منطق مجموعه‌ای نوع‌ها.</p></div>
+      <div class="card"><div class="ico"><svg class="i"><use href="#i-shield"/></svg></div><h3>کد راستی‌آزمایی‌شده</h3><p>هر ۱۸۶ قطعه‌کد با <code>tsc</code> رسمی بررسی شده — روی TypeScript 7.0.2 و 6.0.3 با صفر خطا؛ خطاهای عمدی هم با پیام واقعی کامپایلر آمده‌اند.</p></div>
+      <div class="card"><div class="ico"><svg class="i"><use href="#i-zap"/></svg></div><h3>همگام با TypeScript 7</h3><p>کامپایلر native جدید، گذار ۶ به ۷، <code>NoInfer</code>، const type parameters و satisfies — با مرزبندی روشن زبان و پیاده‌سازی.</p></div>
+      <div class="card"><div class="ico"><svg class="i"><use href="#i-layers"/></svg></div><h3>طراحی نوع پیشرفته</h3><p>conditional و mapped types، template literals، type-level programming با مرز مهندسی مشخص: کِی بسازیم و کِی نه.</p></div>
+      <div class="card"><div class="ico"><svg class="i"><use href="#i-server"/></svg></div><h3>Production واقعی</h3><p>اعتبارسنجی مرزی با Zod، الگوی Result، ماشین حالت تایپ‌شده، React و Next.js، انتشار پکیج — با ۸ پروژه کامل.</p></div>
+      <div class="card"><div class="ico"><svg class="i"><use href="#i-briefcase"/></svg></div><h3>آمادگی مصاحبه</h3><p>+۱۳۰ پرسش با پاسخ تشریحی: دو پرسش تخصصی در پایان هر فصل و ۵۰ پرسش سطح‌بندی‌شده از Junior تا Senior در پیوست.</p></div>
     </div>
   </div>
 </section>
 
 <!-- PATH -->
-<section class="path" style="padding-top:0">
+<section class="path" id="path" style="padding-top:0">
   <div class="wrap">
     <div class="kicker">Learning path</div>
     <h2 class="sec">مسیر کتاب در چهار گام</h2>
     <p class="sec-sub">از مدل ذهنی تا انتشار پکیج تایپ‌شده؛ هر گام یک دستاورد ملموس دارد.</p>
     <div class="cards">
-      <div class="card step"><div class="no">01</div><h3>🌱 بنیادها و مدل ذهنی</h3><div class="rng">فصل‌های ۱ تا ۱۲</div><p>زنجیره ابزار، tsconfig، استنتاج، widening، structural typing، narrowing و توابع.</p><div class="goal">🎯 پیش‌بینی رفتار کامپایلر به‌جای آزمون‌وخطا.</div></div>
-      <div class="card step"><div class="no">02</div><h3>🧩 طراحی نوع پیشرفته</h3><div class="rng">فصل‌های ۱۳ تا ۲۶</div><p>جنریک‌ها، conditional و mapped types، template literals، discriminated unions و variance.</p><div class="goal">🎯 طراحی API هایی که اشتباه را غیرممکن می‌کنند.</div></div>
-      <div class="card step"><div class="no">03</div><h3>🏗️ کامپایلر و معماری</h3><div class="rng">فصل‌های ۲۷ تا ۳۳</div><p>پرچم‌های strict، ماژول‌ها و resolution، مهاجرت JS→TS، monorepo و گذار TS 6→7.</p><div class="goal">🎯 تسلط بر ابزار در مقیاس تیم و سازمان.</div></div>
-      <div class="card step"><div class="no">04</div><h3>🚀 سیستم‌های Production</h3><div class="rng">فصل‌های ۳۴ تا ۴۰</div><p>Zod، الگوی Result، ماشین حالت، React، fullstack type safety و انتشار پکیج.</p><div class="goal">🎯 نوع‌ها به‌عنوان قرارداد مهندسی در کل سیستم.</div></div>
+      <div class="card step"><div class="no">01</div><h3><svg class="i"><use href="#i-sprout"/></svg> بنیادها و مدل ذهنی</h3><div class="rng">فصل‌های ۱ تا ۱۲</div><p>زنجیره ابزار، tsconfig، استنتاج، widening، structural typing، narrowing و توابع.</p><div class="goal"><svg class="i"><use href="#i-target"/></svg> پیش‌بینی رفتار کامپایلر به‌جای آزمون‌وخطا.</div></div>
+      <div class="card step"><div class="no">02</div><h3><svg class="i"><use href="#i-blocks"/></svg> طراحی نوع پیشرفته</h3><div class="rng">فصل‌های ۱۳ تا ۲۶</div><p>جنریک‌ها، conditional و mapped types، template literals، discriminated unions و variance.</p><div class="goal"><svg class="i"><use href="#i-target"/></svg> طراحی API هایی که اشتباه را غیرممکن می‌کنند.</div></div>
+      <div class="card step"><div class="no">03</div><h3><svg class="i"><use href="#i-building"/></svg> کامپایلر و معماری</h3><div class="rng">فصل‌های ۲۷ تا ۳۳</div><p>پرچم‌های strict، ماژول‌ها و resolution، مهاجرت JS→TS، monorepo و گذار TS 6→7.</p><div class="goal"><svg class="i"><use href="#i-target"/></svg> تسلط بر ابزار در مقیاس تیم و سازمان.</div></div>
+      <div class="card step"><div class="no">04</div><h3><svg class="i"><use href="#i-rocket"/></svg> سیستم‌های Production</h3><div class="rng">فصل‌های ۳۴ تا ۴۰</div><p>Zod، الگوی Result، ماشین حالت، React، fullstack type safety و انتشار پکیج.</p><div class="goal"><svg class="i"><use href="#i-target"/></svg> نوع‌ها به‌عنوان قرارداد مهندسی در کل سیستم.</div></div>
     </div>
   </div>
 </section>
 
 <!-- PREVIEWS -->
-<section style="padding-top:0">
+<section id="preview" style="padding-top:0">
   <div class="wrap">
     <div class="kicker">Book preview</div>
     <h2 class="sec">نگاهی به داخل کتاب</h2>
@@ -272,7 +392,7 @@ footer a{color:var(--mut)}
 </section>
 
 <!-- CHAPTERS -->
-<section style="padding-top:0">
+<section id="chapters" style="padding-top:0">
   <div class="wrap">
     <div class="kicker">Chapters</div>
     <h2 class="sec">فهرست ۴۰ فصل</h2>
@@ -282,15 +402,15 @@ footer a{color:var(--mut)}
 </section>
 
 <!-- EDITIONS -->
-<section style="padding-top:0">
+<section id="editions" style="padding-top:0">
   <div class="wrap">
     <div class="kicker">Editions</div>
     <h2 class="sec">نسخهٔ مناسب خودت را بردار</h2>
     <p class="sec-sub">همهٔ نسخه‌ها رایگان‌اند — هر طور راحت‌تری، شروع کن.</p>
     <div class="eds">
-      <div class="ed"><h3>نسخهٔ آنلاین</h3><p>خواندن در مرورگر با پرش مستقیم به هر فصل؛ بدون دانلود.</p><div class="meta">220 pages · in-browser</div><a class="btn gold" href="book/">مطالعه آنلاین</a></div>
-      <div class="ed"><h3>PDF</h3><p>A4 رنگی، قابل جست‌وجو و آمادهٔ چاپ — با بوکمارک کامل سه‌سطحی.</p><div class="meta">220 pages · A4 · 2 MB</div><a class="btn ghost" href="pdf/TypeScript-Persian-Guide.pdf" download>دانلود PDF</a></div>
-      <div class="ed"><h3>مخزن پروژه</h3><p>کتاب + ۸ پروژه عملی TypeScript که با هر دو کامپایلر ۶ و ۷ راستی‌آزمایی شده‌اند.</p><div class="meta">TypeScript · examples/</div><a class="btn ghost" href="https://github.com/rezaian-dev/typescript-persian-guide">مشاهده مخزن</a></div>
+      <div class="ed"><h3><svg class="i"><use href="#i-book-open"/></svg> نسخهٔ آنلاین</h3><p>خواندن در مرورگر با پرش مستقیم به هر فصل؛ بدون دانلود.</p><div class="meta">220 pages · in-browser</div><a class="btn gold" href="book/">مطالعه آنلاین</a></div>
+      <div class="ed"><h3><svg class="i"><use href="#i-download"/></svg> PDF</h3><p>A4 رنگی، قابل جست‌وجو و آمادهٔ چاپ — با بوکمارک کامل سه‌سطحی.</p><div class="meta">220 pages · A4 · 2 MB</div><a class="btn ghost" href="pdf/TypeScript-Persian-Guide.pdf" download>دانلود PDF</a></div>
+      <div class="ed"><h3><svg class="i f"><use href="#i-github"/></svg> مخزن پروژه</h3><p>کتاب + ۸ پروژه عملی TypeScript که با هر دو کامپایلر ۶ و ۷ راستی‌آزمایی شده‌اند.</p><div class="meta">TypeScript · examples/</div><a class="btn ghost" href="https://github.com/rezaian-dev/typescript-persian-guide">مشاهده مخزن</a></div>
     </div>
   </div>
 </section>
@@ -311,7 +431,7 @@ footer a{color:var(--mut)}
 </section>
 
 <!-- AUTHOR -->
-<div class="author">
+<div class="author" id="author">
   <div class="wrap box">
     <img src="author.png" alt="محمدرضا رضائیان"/>
     <div>
@@ -319,23 +439,57 @@ footer a{color:var(--mut)}
       <div class="skills">JavaScript · TypeScript · React · Node.js · Web Performance</div>
       <p>توسعه‌دهنده و نویسندهٔ مجموعه راهنماهای فارسی؛ با تمرکز بر مدل ذهنی، شفافیت مرحله‌به‌مرحله و انتقال تجربهٔ مهندسی به زبان روشن.</p>
       <div class="links">
-        <a href="https://github.com/rezaian-dev">GitHub</a>
-        <a href="https://github.com/rezaian-dev/typescript-persian-guide/issues">گزارش خطا</a>
-        <a href="book/">مطالعه آنلاین</a>
+        <a href="https://github.com/rezaian-dev"><svg class="i f"><use href="#i-github"/></svg> GitHub</a>
+        <a href="https://github.com/rezaian-dev/typescript-persian-guide/issues"><svg class="i"><use href="#i-bug"/></svg> گزارش خطا</a>
+        <a href="book/"><svg class="i"><use href="#i-book-open"/></svg> مطالعه آنلاین</a>
       </div>
     </div>
   </div>
 </div>
 
-<footer>
-  <div class="wrap">© ۲۰۲۶ محمدرضا رضائیان — <a href="https://github.com/rezaian-dev/typescript-persian-guide">مخزن GitHub</a> · تایپوگرافی سایت با Vazirmatn (SIL OFL)</div>
+<footer class="bigfoot">
+  <div class="wrap cols">
+    <div class="about">
+      <a class="brand" href="#top"><span class="tsb">TS</span><span>مرجع جامع <b>TypeScript</b></span></a>
+      <p>کتاب مرجع فارسی TypeScript — از مدل ذهنی کامپایلر تا مهندسی Production. رایگان، ۲۲۰ صفحه، با کدهای راستی‌آزمایی‌شده روی کامپایلر رسمی.</p>
+      <div class="social">
+        <a href="https://github.com/rezaian-dev" aria-label="GitHub"><svg class="i f"><use href="#i-github"/></svg></a>
+        <a href="mailto:mrezaian.dev@gmail.com" aria-label="ایمیل"><svg class="i"><use href="#i-mail"/></svg></a>
+        <a href="https://github.com/rezaian-dev/typescript-persian-guide/issues" aria-label="گزارش خطا"><svg class="i"><use href="#i-bug"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4><svg class="i"><use href="#i-list"/></svg> ناوبری</h4>
+      <div class="flinks">
+        <a href="#features"><svg class="i"><use href="#i-star"/></svg> ویژگی‌ها</a>
+        <a href="#path"><svg class="i"><use href="#i-map"/></svg> مسیر یادگیری</a>
+        <a href="#preview"><svg class="i"><use href="#i-image"/></svg> پیش‌نمایش کتاب</a>
+        <a href="#chapters"><svg class="i"><use href="#i-list"/></svg> فهرست ۴۰ فصل</a>
+        <a href="#author"><svg class="i"><use href="#i-user"/></svg> دربارهٔ نویسنده</a>
+      </div>
+    </div>
+    <div>
+      <h4><svg class="i"><use href="#i-package"/></svg> منابع</h4>
+      <div class="flinks">
+        <a href="book/"><svg class="i"><use href="#i-book-open"/></svg> مطالعهٔ آنلاین</a>
+        <a href="pdf/TypeScript-Persian-Guide.pdf" download><svg class="i"><use href="#i-download"/></svg> دانلود PDF</a>
+        <a href="https://github.com/rezaian-dev/typescript-persian-guide"><svg class="i f"><use href="#i-github"/></svg> مخزن GitHub</a>
+        <a href="https://github.com/rezaian-dev/typescript-persian-guide/issues"><svg class="i"><use href="#i-bug"/></svg> گزارش خطا</a>
+        <a href="https://rezaian-dev.github.io/javascript-persian-guide/"><svg class="i"><use href="#i-book"/></svg> مرجع JavaScript</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap botbar">
+    <span>© ۲۰۲۶ محمدرضا رضائیان — همهٔ حقوق محفوظ است</span>
+    <span class="made">ساخته‌شده با <svg class="i"><use href="#i-heart"/></svg> برای جامعهٔ توسعه‌دهندگان فارسی‌زبان</span>
+  </div>
 </footer>
 
 <div id="lb"><img src="" alt=""/></div>
 
 <script>
 const PARTS = [{"label": "بخش یکم", "name": "بنیادها و مدل ذهنی سیستم نوع", "chapters": [{"n": 1, "t": "TypeScript چه چیزی به JavaScript اضافه می‌کند؟", "p": 8}, {"n": 2, "t": "راه‌اندازی پروژه و زنجیره ابزار", "p": 12}, {"n": 3, "t": "tsconfig.json — طراحی آگاهانه پیکربندی", "p": 16}, {"n": 4, "t": "استنتاج نوع و Contextual Typing", "p": 21}, {"n": 5, "t": "نوع‌های اولیه، Literal Types و Widening", "p": 25}, {"n": 6, "t": "نوع‌های شیئی و Structural Typing", "p": 29}, {"n": 7, "t": "null و undefined — پایان «خطای میلیارد دلاری»", "p": 33}, {"n": 8, "t": "any، unknown، never و void", "p": 37}, {"n": 9, "t": "Union و Intersection", "p": 42}, {"n": 10, "t": "Narrowing و تحلیل جریان کنترل", "p": 46}, {"n": 11, "t": "توابع — قرارداد ورودی و خروجی", "p": 51}, {"n": 12, "t": "آرایه، Tuple، readonly — و هنر خواندن خطای کامپایلر", "p": 56}]}, {"label": "بخش دوم", "name": "طراحی نوع پیشرفته", "chapters": [{"n": 13, "t": "interface و type — یک انتخاب مهندسی", "p": 61}, {"n": 14, "t": "جنریک‌ها — پارامتر نوع، Constraint و Default", "p": 65}, {"n": 15, "t": "جنریک در عمل — API و کامپوننت قابل‌استفاده مجدد", "p": 70}, {"n": 16, "t": "keyof، typeof و Indexed Access", "p": 75}, {"n": 17, "t": "Conditional Types و infer", "p": 80}, {"n": 18, "t": "Mapped Types و Key Remapping", "p": 85}, {"n": 19, "t": "Template Literal Types", "p": 89}, {"n": 20, "t": "Utility Types — استاندارد و سفارشی", "p": 94}, {"n": 21, "t": "as const، satisfies و Const Type Parameters", "p": 98}, {"n": 22, "t": "Discriminated Union و Exhaustiveness", "p": 103}, {"n": 23, "t": "Type Predicate، Assertion Function و Branded Types", "p": 108}, {"n": 24, "t": "Variance و سازگاری توابع", "p": 113}, {"n": 25, "t": "Overload، Declaration Merging و Module Augmentation", "p": 118}, {"n": 26, "t": "برنامه‌نویسی Type-Level — قدرت، هزینه و مرز عقل", "p": 122}]}, {"label": "بخش سوم", "name": "کامپایلر، ابزار و معماری", "chapters": [{"n": 27, "t": "خانواده strict — طراحی سطح سخت‌گیری", "p": 127}, {"n": 28, "t": "ماژول‌ها — ESM، CommonJS و Module Resolution", "p": 131}, {"n": 29, "t": "فایل‌های اعلان و @types", "p": 135}, {"n": 30, "t": "مهاجرت از JavaScript — تدریجی و قابل برگشت", "p": 140}, {"n": 31, "t": "Project References، Monorepo و CI", "p": 144}, {"n": 32, "t": "تست نوع، دیباگ خطاهای پیچیده و کارایی کامپایلر", "p": 148}, {"n": 33, "t": "گذار TypeScript 6 به 7 — کامپایلر Native", "p": 153}]}, {"label": "بخش چهارم", "name": "TypeScript در سیستم‌های Production", "chapters": [{"n": 34, "t": "مرز داده بیرونی — اعتبارسنجی Runtime با Zod", "p": 158}, {"n": 35, "t": "کلاینت API تایپ‌شده با مدل خطای صریح", "p": 163}, {"n": 36, "t": "مدل‌سازی دامنه و ماشین حالت", "p": 168}, {"n": 37, "t": "React با TypeScript", "p": 173}, {"n": 38, "t": "Next.js — مرز سرور و کلاینت", "p": 179}, {"n": 39, "t": "فرم‌ها، State ناهمگام و Event Emitter تایپ‌شده", "p": 184}, {"n": 40, "t": "انتشار پکیج — اعلان عمومی و تست نوع", "p": 190}]}];
-const ICONS = ["🌱","🧩","🏗️","🚀"];
+const ICONS = ["i-sprout","i-blocks","i-building","i-rocket"];
 const fa = n => String(n).replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
 
 // chapters accordion
@@ -343,7 +497,7 @@ const root = document.getElementById("parts");
 PARTS.forEach((p,i)=>{
   const d = document.createElement("details");
   d.className = "part"; if(i===0) d.open = true;
-  d.innerHTML = `<summary><span>${ICONS[i]}</span><span>${p.name}</span>
+  d.innerHTML = `<summary><span class="pico"><svg class="i"><use href="#${ICONS[i]}"/></svg></span><span>${p.name}</span>
     <span class="mark">${p.chapters[0].n}–${p.chapters[p.chapters.length-1].n}</span>
     <span class="cnt">${p.chapters.length} chapters</span></summary>
     <div class="chs">${p.chapters.map(c=>
@@ -365,6 +519,18 @@ const io = new IntersectionObserver(es=>es.forEach(e=>{
 }),{threshold:.4});
 document.querySelectorAll(".num").forEach(el=>io.observe(el));
 
+// mobile menu
+const burger=document.getElementById("burger"), mmenu=document.getElementById("mmenu");
+burger.addEventListener("click",()=>{
+  const open=mmenu.classList.toggle("open");
+  burger.innerHTML=`<svg class="i"><use href="#${open?"i-x":"i-menu"}"/></svg>`;
+  if(open&&window.Motion) Motion.animate([...mmenu.children],{opacity:[0,1],y:[-8,0]},{duration:.3,delay:Motion.stagger(.04)});
+});
+mmenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+  mmenu.classList.remove("open");
+  burger.innerHTML='<svg class="i"><use href="#i-menu"/></svg>';
+}));
+
 // lightbox
 const lb=document.getElementById("lb"), lbi=lb.querySelector("img");
 document.querySelectorAll("[data-lb]").forEach(a=>a.addEventListener("click",e=>{
@@ -378,6 +544,9 @@ lb.addEventListener("click",()=>lb.classList.remove("show"));
   if(!window.Motion || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const {animate, inView, stagger} = Motion;
   const EASE=[.22,1,.36,1];
+
+  /* header entrance */
+  animate(".topnav .navrow > *",{opacity:[0,1],y:[-12,0]},{duration:.5,delay:stagger(.08),ease:EASE});
 
   /* hero entrance */
   animate(".hero .badge",{opacity:[0,1],y:[12,0]},{duration:.5,delay:stagger(.09),ease:EASE});
