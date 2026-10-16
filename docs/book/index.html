@@ -45,6 +45,15 @@ canvas{display:block;max-width:100%;height:auto!important;border-radius:8px;box-
 <main><div id="stage"><canvas id="cv"></canvas><div id="loading">در حال بارگذاری کتاب…</div></div></main>
 <p class="hint">پیمایش: دکمه‌ها، کلیدهای ← → یا وارد کردن شماره صفحه</p>
 
+<script src="https://cdn.jsdelivr.net/npm/motion@12.23.26/dist/motion.js"></script>
+<script>
+(function(){
+  if(!window.Motion || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const {animate, stagger} = Motion;
+  animate(".bar > *, .bar .nav > *",{opacity:[0,1],y:[-10,0]},{duration:.45,delay:stagger(.06),ease:[.22,1,.36,1]});
+  animate("#stage",{opacity:[0,1],scale:[.97,1]},{duration:.6,delay:.2,ease:[.22,1,.36,1]});
+})();
+</script>
 <script type="module">
 import * as pdfjs from "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.min.mjs";
 pdfjs.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs";
@@ -77,6 +86,7 @@ async function render(n) {
   cv.style.width = cssW + "px";
   await page.render({ canvasContext: ctx, viewport: vp }).promise;
   loading.style.display = "none";
+  if (window.Motion) Motion.animate(cv, { opacity: [.45, 1], y: [6, 0] }, { duration: .3, ease: "easeOut" });
   rendering = false;
   if (pending !== null && pending !== cur) { const p = pending; pending = null; render(p); }
   else pending = null;
