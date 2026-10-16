@@ -26,6 +26,18 @@ main{flex:1;display:flex;justify-content:center;padding:18px 8px 40px}
 canvas{display:block;max-width:100%;height:auto!important;border-radius:8px;box-shadow:0 18px 60px rgba(0,0,0,.5);background:#fff}
 #loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--mut);font-size:.9rem}
 .hint{text-align:center;font-size:.72rem;color:#667085;padding-bottom:18px}
+@media(max-width:640px){
+  .bar{padding:8px 10px;gap:6px}
+  .bar .title{display:none}
+  .nav{width:100%;justify-content:center}
+  button,.dl{padding:7px 10px;font-size:.78rem}
+  #pageno{width:50px;padding:7px 2px;font-size:.8rem}
+  main{padding:10px 4px 28px}
+  .hint{font-size:.66rem;padding-inline:14px}
+}
+@media(max-width:380px){
+  button,.dl{padding:6px 8px;font-size:.72rem}
+}
 </style>
 </head>
 <body>
@@ -43,7 +55,7 @@ canvas{display:block;max-width:100%;height:auto!important;border-radius:8px;box-
   </div>
 </header>
 <main><div id="stage"><canvas id="cv"></canvas><div id="loading">در حال بارگذاری کتاب…</div></div></main>
-<p class="hint">پیمایش: دکمه‌ها، کلیدهای ← → یا وارد کردن شماره صفحه</p>
+<p class="hint">پیمایش: دکمه‌ها، کلیدهای ← →، کشیدن انگشت (موبایل) یا وارد کردن شماره صفحه</p>
 
 <script src="https://cdn.jsdelivr.net/npm/motion@12.23.26/dist/motion.js"></script>
 <script>
@@ -109,6 +121,12 @@ addEventListener("keydown", e => {
   if (e.key === "ArrowRight") render(cur - 1);
 });
 let rT; addEventListener("resize", () => { clearTimeout(rT); rT = setTimeout(() => render(cur), 200); });
+let tx = 0, ty = 0;
+addEventListener("touchstart", e => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+addEventListener("touchend", e => {
+  const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) dx < 0 ? render(cur + 1) : render(cur - 1);
+}, { passive: true });
 </script>
 </body>
 </html>
