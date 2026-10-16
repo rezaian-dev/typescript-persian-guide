@@ -4,41 +4,73 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>مطالعه آنلاین | مرجع جامع TypeScript</title>
-<meta name="description" content="نسخه آنلاین کتاب مرجع جامع TypeScript — ۲۲۰ صفحه، ۴۰ فصل"/>
+<meta name="description" content="نسخه آنلاین کتاب مرجع جامع TypeScript — ۲۲۰ صفحه، ۴۰ فصل، حروف‌چینی کامل"/>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%233178C6'/><text x='32' y='44' font-size='32' font-weight='bold' font-family='monospace' fill='white' text-anchor='middle'>TS</text></svg>"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"/>
 <style>
-:root{--navy:#1C2642;--ink:#232F52;--line:#36436B;--gold:#E3B341;--mut:#9CACC8}
+:root{--navy:#1C2642;--ink:#232F52;--line:#36436B;--gold:#CA8A04;--gold2:#E3B341;--blue:#3178C6;--mut:#9CACC8}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Vazirmatn,system-ui,sans-serif;background:var(--navy);color:#DCE4F2;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
 .i{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.15em;flex-shrink:0}
 .i.f{fill:currentColor;stroke:none}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Vazirmatn,system-ui,sans-serif;background:var(--navy);color:#DCE4F2;min-height:100vh;display:flex;flex-direction:column}
-header{position:sticky;top:0;z-index:10;background:rgba(30,41,72,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-.bar{max-width:1000px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.bar a.home{color:var(--gold);font-weight:700;font-size:.9rem}
-.bar .title{font-size:.85rem;color:var(--mut);margin-inline-end:auto}
-.nav{display:flex;align-items:center;gap:6px}
-button,.dl{border:1px solid var(--line);background:#2A3659;color:#DCE4F2;border-radius:9px;padding:6px 14px;font-family:inherit;font-size:.85rem;cursor:pointer;transition:.15s;text-decoration:none}
-button:hover,.dl:hover{border-color:var(--gold);color:var(--gold)}
-button:disabled{opacity:.35;cursor:default}
-#pageno{width:64px;text-align:center;border:1px solid var(--line);background:#242F52;color:#fff;border-radius:9px;padding:6px 4px;font-family:inherit;font-size:.85rem;direction:ltr}
-.total{font-size:.8rem;color:var(--mut);direction:ltr}
-main{flex:1;display:flex;justify-content:center;padding:18px 8px 40px}
-#stage{position:relative;max-width:100%}
-canvas{display:block;max-width:100%;height:auto!important;border-radius:8px;box-shadow:0 18px 60px rgba(0,0,0,.5);background:#fff}
-#loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--mut);font-size:.9rem}
-.hint{text-align:center;font-size:.72rem;color:#7D8BA6;padding-bottom:18px}
-@media(max-width:640px){
-  .bar{padding:8px 10px;gap:6px}
-  .bar .title{display:none}
-  .nav{width:100%;justify-content:center}
-  button,.dl{padding:7px 10px;font-size:.78rem}
-  #pageno{width:50px;padding:7px 2px;font-size:.8rem}
-  main{padding:10px 4px 28px}
-  .hint{font-size:.66rem;padding-inline:14px}
+/* header */
+header{position:sticky;top:0;z-index:10;background:rgba(30,41,72,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{max-width:1060px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:10px}
+.home{display:inline-flex;align-items:center;gap:8px;color:var(--gold2);font-weight:700;font-size:.9rem;white-space:nowrap}
+.tsb{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font-size:.74rem;font-weight:800;direction:ltr}
+.title{font-size:.84rem;color:var(--mut);margin-inline-end:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;align-items:center;gap:8px}
+select{border:1px solid var(--line);background:#242F52;color:#DCE4F2;border-radius:10px;padding:8px 10px;font-family:inherit;font-size:.8rem;max-width:210px;cursor:pointer}
+.dl{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:#2A3659;color:#DCE4F2;border-radius:10px;padding:8px 14px;font-size:.82rem;transition:border-color .2s,color .2s,box-shadow .25s;white-space:nowrap}
+.dl:hover{border-color:var(--gold2);color:var(--gold2);box-shadow:0 8px 18px rgba(10,15,30,.35)}
+.dl.icon{padding:8px 10px}
+/* notice */
+.wrap{max-width:900px;margin:0 auto;padding:0 14px;width:100%}
+.notice{display:flex;gap:12px;align-items:flex-start;background:#242F52;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:22px auto 6px;font-size:.84rem;line-height:1.9;color:#CBD6EA;box-shadow:0 12px 32px rgba(10,15,30,.22)}
+.notice .i{width:1.3em;height:1.3em;color:var(--gold2);margin-top:4px}
+.notice a{color:var(--gold2);font-weight:700;border-bottom:1px dashed rgba(227,179,65,.5)}
+/* dividers */
+.part-div{margin:54px 0 10px;padding:22px 24px;background:linear-gradient(135deg,#232F52,#1E2946);border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 32px rgba(10,15,30,.22);scroll-margin-top:76px}
+.plabel{display:inline-block;font-size:.7rem;font-weight:700;color:var(--gold2);background:rgba(202,138,4,.14);border:1px solid rgba(202,138,4,.35);padding:3px 12px;border-radius:999px;margin-bottom:10px}
+.part-div h2{font-size:1.25rem;color:#fff}
+.psub{font-size:.8rem;color:var(--mut);line-height:1.9;margin-top:8px}
+.ch-div{margin:42px 0 6px;padding:4px 2px;border-right:3px solid var(--gold);padding-right:16px;scroll-margin-top:76px}
+.cpart{font-size:.7rem;color:#7D8BA6;font-weight:600}
+.ch-div h2{font-size:1.05rem;color:#fff;margin-top:4px;line-height:1.7}
+.ch-div h2 b{color:var(--gold2);font-weight:800}
+.csub{font-size:.78rem;color:var(--mut);margin-top:4px;line-height:1.8}
+/* pages */
+.pg{margin:18px auto;max-width:860px;content-visibility:auto;contain-intrinsic-size:auto 1180px;scroll-margin-top:76px}
+.pg a{display:block;border-radius:10px;overflow:hidden;box-shadow:0 14px 44px rgba(0,0,0,.4);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s;background:#fff}
+.pg a:hover{transform:translateY(-4px);box-shadow:0 22px 60px rgba(0,0,0,.5)}
+.pg img{display:block;width:100%;height:auto;aspect-ratio:1/1.4142}
+.pg figcaption{text-align:center;font-size:.72rem;color:#7D8BA6;margin-top:8px}
+/* top btn */
+#toTop{position:fixed;bottom:22px;left:22px;z-index:20;width:46px;height:46px;border-radius:13px;border:1px solid var(--line);background:rgba(42,54,89,.92);backdrop-filter:blur(6px);color:#DCE4F2;cursor:pointer;display:none;align-items:center;justify-content:center;transition:border-color .2s,color .2s,transform .25s;box-shadow:0 10px 26px rgba(10,15,30,.4)}
+#toTop:hover{border-color:var(--gold2);color:var(--gold2);transform:translateY(-3px)}
+#toTop.show{display:inline-flex}
+/* footer */
+footer{margin-top:50px;border-top:1px solid var(--line);background:#161F38}
+.fin{max-width:1060px;margin:0 auto;padding:18px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.76rem;color:#7D8BA6}
+.fin .lnk{display:flex;gap:16px}
+.fin a{display:inline-flex;align-items:center;gap:6px;transition:.2s}
+.fin a:hover{color:var(--gold2)}
+.heart{color:#E5534B}
+@media(max-width:760px){
+  .title{display:none}
+  .bar{flex-wrap:wrap}
+  .nav{margin-inline-start:auto}
+  select{max-width:160px;font-size:.74rem}
+  .dl span{display:none}
+  .dl{padding:8px 10px}
 }
-@media(max-width:380px){
-  button,.dl{padding:6px 8px;font-size:.72rem}
+@media(max-width:420px){
+  .part-div{padding:18px 16px;margin-top:40px}
+  .ch-div{margin-top:34px}
+  .pg{margin:14px auto}
+  select{max-width:128px}
 }
 </style>
 </head>
@@ -47,104 +79,382 @@ canvas{display:block;max-width:100%;height:auto!important;border-radius:8px;box-
 <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
 <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
 <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.16 1.18a11 11 0 0 1 5.76 0c2.19-1.49 3.15-1.18 3.15-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.26 5.66.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></symbol>
-<symbol id="i-chev-r" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
-<symbol id="i-chev-l" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></symbol>
 <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
 </defs></svg>
+
 <header>
   <div class="bar">
-    <a class="home" href="../" style="display:inline-flex;align-items:center;gap:8px">
-      <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;background:#3178C6;color:#fff;font-size:.72rem;font-weight:800;direction:ltr">TS</span>
-      <svg class="i"><use href="#i-home"/></svg> صفحه کتاب</a>
-    <span class="title">مرجع جامع TypeScript — نسخه آنلاین</span>
+    <a class="home" href="../"><span class="tsb">TS</span><svg class="i"><use href="#i-home"/></svg> صفحه کتاب</a>
+    <span class="title">مرجع جامع TypeScript — نسخهٔ آنلاین</span>
     <nav class="nav">
-      <button id="next" style="display:inline-flex;align-items:center;gap:5px">صفحه بعد <svg class="i"><use href="#i-chev-l"/></svg></button>
-      <input id="pageno" type="number" min="1" value="1" aria-label="شماره صفحه"/>
-      <span class="total" id="total">/ …</span>
-      <button id="prev" style="display:inline-flex;align-items:center;gap:5px"><svg class="i"><use href="#i-chev-r"/></svg> صفحه قبل</button>
-      <a class="dl" href="../pdf/TypeScript-Persian-Guide.pdf" download style="display:inline-flex;align-items:center;gap:6px"><svg class="i"><use href="#i-download"/></svg> PDF</a>
+      <select id="jump" aria-label="پرش به فصل">
+<option value="">— پرش به فصل —</option>
+<option value="part-1">بخش یکم · بنیادها</option>
+<option value="ch-01">۰۱ · TypeScript چه چیزی به JavaScript اضافه</option>
+<option value="ch-02">۰۲ · راه‌اندازی پروژه و زنجیره ابزار</option>
+<option value="ch-03">۰۳ · tsconfig.json — طراحی آگاهانه پیکربندی</option>
+<option value="ch-04">۰۴ · استنتاج نوع و Contextual Typing</option>
+<option value="ch-05">۰۵ · نوع‌های اولیه، Literal Types و Widenin</option>
+<option value="ch-06">۰۶ · نوع‌های شیئی و Structural Typing</option>
+<option value="ch-07">۰۷ · null و undefined — پایان «خطای میلیارد</option>
+<option value="ch-08">۰۸ · any، unknown، never و void</option>
+<option value="ch-09">۰۹ · Union و Intersection</option>
+<option value="ch-10">۱۰ · Narrowing و تحلیل جریان کنترل</option>
+<option value="ch-11">۱۱ · توابع — قرارداد ورودی و خروجی</option>
+<option value="ch-12">۱۲ · آرایه، Tuple، readonly — و هنر خواندن </option>
+<option value="part-2">بخش دوم · طراحی نوع</option>
+<option value="ch-13">۱۳ · interface و type — یک انتخاب مهندسی</option>
+<option value="ch-14">۱۴ · جنریک‌ها — پارامتر نوع، Constraint و D</option>
+<option value="ch-15">۱۵ · جنریک در عمل — API و کامپوننت قابل‌است</option>
+<option value="ch-16">۱۶ · keyof، typeof و Indexed Access</option>
+<option value="ch-17">۱۷ · Conditional Types و infer</option>
+<option value="ch-18">۱۸ · Mapped Types و Key Remapping</option>
+<option value="ch-19">۱۹ · Template Literal Types</option>
+<option value="ch-20">۲۰ · Utility Types — استاندارد و سفارشی</option>
+<option value="ch-21">۲۱ · as const، satisfies و Const Type Param</option>
+<option value="ch-22">۲۲ · Discriminated Union و Exhaustiveness</option>
+<option value="ch-23">۲۳ · Type Predicate، Assertion Function و B</option>
+<option value="ch-24">۲۴ · Variance و سازگاری توابع</option>
+<option value="ch-25">۲۵ · Overload، Declaration Merging و Module</option>
+<option value="ch-26">۲۶ · برنامه‌نویسی Type-Level — قدرت، هزینه </option>
+<option value="part-3">بخش سوم · کامپایلر</option>
+<option value="ch-27">۲۷ · خانواده strict — طراحی سطح سخت‌گیری</option>
+<option value="ch-28">۲۸ · ماژول‌ها — ESM، CommonJS و Module Reso</option>
+<option value="ch-29">۲۹ · فایل‌های اعلان و @types</option>
+<option value="ch-30">۳۰ · مهاجرت از JavaScript — تدریجی و قابل ب</option>
+<option value="ch-31">۳۱ · Project References، Monorepo و CI</option>
+<option value="ch-32">۳۲ · تست نوع، دیباگ خطاهای پیچیده و کارایی </option>
+<option value="ch-33">۳۳ · گذار TypeScript 6 به 7 — کامپایلر Nati</option>
+<option value="part-4">بخش چهارم · Production</option>
+<option value="ch-34">۳۴ · مرز داده بیرونی — اعتبارسنجی Runtime ب</option>
+<option value="ch-35">۳۵ · کلاینت API تایپ‌شده با مدل خطای صریح</option>
+<option value="ch-36">۳۶ · مدل‌سازی دامنه و ماشین حالت</option>
+<option value="ch-37">۳۷ · React با TypeScript</option>
+<option value="ch-38">۳۸ · Next.js — مرز سرور و کلاینت</option>
+<option value="ch-39">۳۹ · فرم‌ها، State ناهمگام و Event Emitter </option>
+<option value="ch-40">۴۰ · انتشار پکیج — اعلان عمومی و تست نوع</option>
+<option value="apps">پیوست‌ها</option>
+      </select>
+      <a class="dl" href="../pdf/TypeScript-Persian-Guide.pdf" download><svg class="i"><use href="#i-download"/></svg><span> PDF</span></a>
+      <a class="dl icon" href="https://github.com/rezaian-dev/typescript-persian-guide" aria-label="GitHub"><svg class="i f"><use href="#i-github"/></svg></a>
     </nav>
   </div>
 </header>
-<main><div id="stage"><canvas id="cv"></canvas><div id="loading">در حال بارگذاری کتاب…</div></div></main>
-<p class="hint">پیمایش: دکمه‌ها، کلیدهای ← →، کشیدن انگشت (موبایل) یا وارد کردن شماره صفحه</p>
-<footer style="border-top:1px solid var(--line);background:#161F38;padding:16px 12px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:.74rem;color:#7D8BA6">
-  <span>© ۲۰۲۶ محمدرضا رضائیان</span>
-  <a href="../" style="color:var(--mut);display:inline-flex;align-items:center;gap:5px"><svg class="i"><use href="#i-home"/></svg> صفحهٔ کتاب</a>
-  <a href="https://github.com/rezaian-dev/typescript-persian-guide" style="color:var(--mut);display:inline-flex;align-items:center;gap:5px"><svg class="i f"><use href="#i-github"/></svg> GitHub</a>
-  <span style="display:inline-flex;align-items:center;gap:5px">ساخته‌شده با <svg class="i" style="color:#E5484D;fill:#E5484D;stroke:none"><use href="#i-heart"/></svg></span>
+
+<main class="wrap" id="pages">
+  <div class="notice"><svg class="i"><use href="#i-info"/></svg><p>نسخهٔ آنلاین، تصویرِ صفحه‌های حروف‌چینی‌شدهٔ کتاب است و متن آن قابل انتخاب نیست. برای بزرگ‌نمایی، روی هر صفحه کلیک کنید تا تصویر تمام‌اندازه در تب جدید باز شود؛ برای متنِ قابل انتخاب و جست‌وجو، نسخهٔ <a href="../pdf/TypeScript-Persian-Guide.pdf" download>PDF</a> را دریافت کنید.</p></div>
+<div class="part-div"><span class="plabel">آغاز کتاب</span><h2>جلد، شناسنامه و راهنمای خواندن</h2><p class="psub">طراحی جلد، فهرست کامل مطالب و سه مسیر پیشنهادی مطالعه</p></div>
+<figure class="pg" id="pg-1"><a href="pages/p001.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱ در اندازهٔ کامل"><img src="pages/p001.webp" fetchpriority="high" alt="صفحهٔ ۱ کتاب"/></a><figcaption>۱</figcaption></figure>
+<figure class="pg" id="pg-2"><a href="pages/p002.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲ در اندازهٔ کامل"><img src="pages/p002.webp" fetchpriority="high" alt="صفحهٔ ۲ کتاب"/></a><figcaption>۲</figcaption></figure>
+<figure class="pg" id="pg-3"><a href="pages/p003.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۳ در اندازهٔ کامل"><img src="pages/p003.webp" loading="lazy" decoding="async" alt="صفحهٔ ۳ کتاب"/></a><figcaption>۳</figcaption></figure>
+<figure class="pg" id="pg-4"><a href="pages/p004.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۴ در اندازهٔ کامل"><img src="pages/p004.webp" loading="lazy" decoding="async" alt="صفحهٔ ۴ کتاب"/></a><figcaption>۴</figcaption></figure>
+<figure class="pg" id="pg-5"><a href="pages/p005.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۵ در اندازهٔ کامل"><img src="pages/p005.webp" loading="lazy" decoding="async" alt="صفحهٔ ۵ کتاب"/></a><figcaption>۵</figcaption></figure>
+<figure class="pg" id="pg-6"><a href="pages/p006.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۶ در اندازهٔ کامل"><img src="pages/p006.webp" loading="lazy" decoding="async" alt="صفحهٔ ۶ کتاب"/></a><figcaption>۶</figcaption></figure>
+<div class="part-div" id="part-1"><span class="plabel">بخش یکم</span><h2>بنیادها و مدل ذهنی سیستم نوع</h2><p class="psub">پیش از آنکه بتوانی نوع‌های پیچیده طراحی کنی، باید بتوانی رفتار کامپایلر را پیش‌بینی کنی. این بخش مدل ذهنی TypeScript را می‌سازد: تحلیل ایستا در برابر رفتار زمان اجرا، استنتاج نوع، سازگاری ساختاری، و تحلیل جریان کنترل. هر فصل با مثال‌های کامپایل‌شده و خطاهای واقعی کامپایلر همراه است.</p></div>
+<figure class="pg" id="pg-7"><a href="pages/p007.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۷ در اندازهٔ کامل"><img src="pages/p007.webp" loading="lazy" decoding="async" alt="صفحهٔ ۷ کتاب"/></a><figcaption>۷</figcaption></figure>
+<div class="ch-div" id="ch-01"><span class="cpart">بنیادها و مدل ذهنی سیستم نوع</span><h2><b>۰۱</b> · TypeScript چه چیزی به JavaScript اضافه می‌کند؟</h2><p class="csub">تحلیل ایستا، Type Erasure و مرز دقیق بین Compile-Time و Runtime</p></div>
+<figure class="pg" id="pg-8"><a href="pages/p008.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۸ در اندازهٔ کامل"><img src="pages/p008.webp" loading="lazy" decoding="async" alt="صفحهٔ ۸ کتاب"/></a><figcaption>۸</figcaption></figure>
+<figure class="pg" id="pg-9"><a href="pages/p009.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۹ در اندازهٔ کامل"><img src="pages/p009.webp" loading="lazy" decoding="async" alt="صفحهٔ ۹ کتاب"/></a><figcaption>۹</figcaption></figure>
+<figure class="pg" id="pg-10"><a href="pages/p010.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۰ در اندازهٔ کامل"><img src="pages/p010.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۰ کتاب"/></a><figcaption>۱۰</figcaption></figure>
+<figure class="pg" id="pg-11"><a href="pages/p011.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۱ در اندازهٔ کامل"><img src="pages/p011.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۱ کتاب"/></a><figcaption>۱۱</figcaption></figure>
+<div class="ch-div" id="ch-02"><span class="cpart">بنیادها و مدل ذهنی سیستم نوع</span><h2><b>۰۲</b> · راه‌اندازی پروژه و زنجیره ابزار</h2><p class="csub">tsc، ادیتور، اجرای مستقیم TS و نقش هر ابزار در Toolchain</p></div>
+<figure class="pg" id="pg-12"><a href="pages/p012.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۲ در اندازهٔ کامل"><img src="pages/p012.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۲ کتاب"/></a><figcaption>۱۲</figcaption></figure>
+<figure class="pg" id="pg-13"><a href="pages/p013.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۳ در اندازهٔ کامل"><img src="pages/p013.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۳ کتاب"/></a><figcaption>۱۳</figcaption></figure>
+<figure class="pg" id="pg-14"><a href="pages/p014.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۴ در اندازهٔ کامل"><img src="pages/p014.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۴ کتاب"/></a><figcaption>۱۴</figcaption></figure>
+<figure class="pg" id="pg-15"><a href="pages/p015.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۵ در اندازهٔ کامل"><img src="pages/p015.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۵ کتاب"/></a><figcaption>۱۵</figcaption></figure>
+<div class="ch-div" id="ch-03"><span class="cpart">بنیادها و مدل ذهنی سیستم نوع</span><h2><b>۰۳</b> · tsconfig.json — طراحی آگاهانه پیکربندی</h2><p class="csub">strict و خانواده‌اش، target/module و گزینه‌هایی که معنای برنامه را عوض می‌کنند</p></div>
+<figure class="pg" id="pg-16"><a href="pages/p016.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۶ در اندازهٔ کامل"><img src="pages/p016.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۶ کتاب"/></a><figcaption>۱۶</figcaption></figure>
+<figure class="pg" id="pg-17"><a href="pages/p017.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۷ در اندازهٔ کامل"><img src="pages/p017.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۷ کتاب"/></a><figcaption>۱۷</figcaption></figure>
+<figure class="pg" id="pg-18"><a href="pages/p018.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۸ در اندازهٔ کامل"><img src="pages/p018.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۸ کتاب"/></a><figcaption>۱۸</figcaption></figure>
+<figure class="pg" id="pg-19"><a href="pages/p019.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۹ در اندازهٔ کامل"><img src="pages/p019.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۹ کتاب"/></a><figcaption>۱۹</figcaption></figure>
+<figure class="pg" id="pg-20"><a href="pages/p020.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۰ در اندازهٔ کامل"><img src="pages/p020.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۰ کتاب"/></a><figcaption>۲۰</figcaption></figure>
+<div class="ch-div" id="ch-04"><span class="cpart">بنیادها و مدل ذهنی سیستم نوع</span><h2><b>۰۴</b> · استنتاج نوع و Contextual Typing</h2><p class="csub">کامپایلر از کجا نوع را حدس می‌زند — و کی باید خودت annotation بنویسی</p></div>
+<figure class="pg" id="pg-21"><a href="pages/p021.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۱ در اندازهٔ کامل"><img src="pages/p021.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۱ کتاب"/></a><figcaption>۲۱</figcaption></figure>
+<figure class="pg" id="pg-22"><a href="pages/p022.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۲ در اندازهٔ کامل"><img src="pages/p022.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۲ کتاب"/></a><figcaption>۲۲</figcaption></figure>
+<figure class="pg" id="pg-23"><a href="pages/p023.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۳ در اندازهٔ کامل"><img src="pages/p023.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۳ کتاب"/></a><figcaption>۲۳</figcaption></figure>
+<figure class="pg" id="pg-24"><a href="pages/p024.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۴ در اندازهٔ کامل"><img src="pages/p024.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۴ کتاب"/></a><figcaption>۲۴</figcaption></figure>
+<div class="ch-div" id="ch-05"><span class="cpart">بنیادها و مدل ذهنی سیستم نوع</span><h2><b>۰۵</b> · نوع‌های اولیه، Literal Types و Widening</h2><p class="csub">چرا let x = &quot;a&quot; نوع string می‌گیرد اما const x نوع &quot;a&quot;</p></div>
+<figure class="pg" id="pg-25"><a href="pages/p025.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۵ در اندازهٔ کامل"><img src="pages/p025.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۵ کتاب"/></a><figcaption>۲۵</figcaption></figure>
+<figure class="pg" id="pg-26"><a href="pages/p026.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۶ در اندازهٔ کامل"><img src="pages/p026.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۶ کتاب"/></a><figcaption>۲۶</figcaption></figure>
+<figure class="pg" id="pg-27"><a href="pages/p027.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۷ در اندازهٔ کامل"><img src="pages/p027.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۷ کتاب"/></a><figcaption>۲۷</figcaption></figure>
+<figure class="pg" id="pg-28"><a href="pages/p028.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۸ در اندازهٔ کامل"><img src="pages/p028.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۸ کتاب"/></a><figcaption>۲۸</figcaption></figure>
+<div class="ch-div" id="ch-06"><span class="cpart">بنیادها و مدل ذهنی سیستم نوع</span><h2><b>۰۶</b> · نوع‌های شیئی و Structural Typing</h2><p class="csub">سازگاری بر اساس شکل، نه نام — و استثنای Excess Property Check</p></div>
+<figure class="pg" id="pg-29"><a href="pages/p029.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۹ در اندازهٔ کامل"><img src="pages/p029.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۹ کتاب"/></a><figcaption>۲۹</figcaption></figure>
+<figure class="pg" id="pg-30"><a href="pages/p030.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۳۰ در اندازهٔ کامل"><img src="pages/p030.webp" loading="lazy" decoding="async" alt="صفحهٔ ۳۰ کتاب"/></a><figcaption>۳۰</figcaption></figure>
+<figure class="pg" id="pg-31"><a href="pages/p031.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۳۱ در اندازهٔ کامل"><img src="pages/p031.webp" loading="lazy" decoding="async" alt="صفحهٔ ۳۱ کتاب"/></a><figcaption>۳۱</figcaption></figure>
+<figure class="pg" id="pg-32"><a href="pages/p032.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۳۲ در اندازهٔ کامل"><img src="pages/p032.webp" loading="lazy" decoding="async" alt="صفحهٔ ۳۲ کتاب"/></a><figcaption>۳۲</figcaption></figure>
+<div class="ch-div" id="ch-07"><span class="cpart">بنیادها و مدل ذهنی سیستم نوع</span><h2><b>۰۷</b> · null و undefined — پایان «خطای میلیارد دلاری»</h2><p class="csub">strictNullChecks، اپراتورهای ?. و ?? و الگوهای درست مقدار غایب</p></div>
+<figure class="pg" id="pg-33"><a href="pages/p033.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۳۳ در اندازهٔ کامل"><img src="pages/p033.webp" loading="lazy" decoding="async" alt="صفحهٔ ۳۳ کتاب"/></a><figcaption>۳۳</figcaption></figure>
+<figure class="pg" id="pg-34"><a href="pages/p034.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۳۴ در اندازهٔ کامل"><img src="pages/p034.webp" loading="lazy" decoding="async" alt="صفحهٔ ۳۴ کتاب"/></a><figcaption>۳۴</figcaption></figure>
+<figure class="pg" id="pg-35"><a href="pages/p035.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۳۵ در اندازهٔ کامل"><img src="pages/p035.webp" loading="lazy" decoding="async" alt="صفحهٔ ۳۵ کتاب"/></a><figcaption>۳۵</figcaption></figure>
+<figure class="pg" id="pg-36"><a href="pages/p036.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۳۶ در اندازهٔ کامل"><img src="pages/p036.webp" loading="lazy" decoding="async" alt="صفحهٔ ۳۶ کتاب"/></a><figcaption>۳۶</figcaption></figure>
+<div class="ch-div" id="ch-08"><span class="cpart">بنیادها و مدل ذهنی سیستم نوع</span><h2><b>۰۸</b> · any، unknown، never و void</h2><p class="csub">چهار نوع مرزی که کیفیت یک codebase را لو می‌دهند</p></div>
+<figure class="pg" id="pg-37"><a href="pages/p037.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۳۷ در اندازهٔ کامل"><img src="pages/p037.webp" loading="lazy" decoding="async" alt="صفحهٔ ۳۷ کتاب"/></a><figcaption>۳۷</figcaption></figure>
+<figure class="pg" id="pg-38"><a href="pages/p038.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۳۸ در اندازهٔ کامل"><img src="pages/p038.webp" loading="lazy" decoding="async" alt="صفحهٔ ۳۸ کتاب"/></a><figcaption>۳۸</figcaption></figure>
+<figure class="pg" id="pg-39"><a href="pages/p039.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۳۹ در اندازهٔ کامل"><img src="pages/p039.webp" loading="lazy" decoding="async" alt="صفحهٔ ۳۹ کتاب"/></a><figcaption>۳۹</figcaption></figure>
+<figure class="pg" id="pg-40"><a href="pages/p040.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۴۰ در اندازهٔ کامل"><img src="pages/p040.webp" loading="lazy" decoding="async" alt="صفحهٔ ۴۰ کتاب"/></a><figcaption>۴۰</figcaption></figure>
+<figure class="pg" id="pg-41"><a href="pages/p041.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۴۱ در اندازهٔ کامل"><img src="pages/p041.webp" loading="lazy" decoding="async" alt="صفحهٔ ۴۱ کتاب"/></a><figcaption>۴۱</figcaption></figure>
+<div class="ch-div" id="ch-09"><span class="cpart">بنیادها و مدل ذهنی سیستم نوع</span><h2><b>۰۹</b> · Union و Intersection</h2><p class="csub">جبرِ نوع‌ها: «یا»، «و»، و رفتار دسترسی به اعضا</p></div>
+<figure class="pg" id="pg-42"><a href="pages/p042.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۴۲ در اندازهٔ کامل"><img src="pages/p042.webp" loading="lazy" decoding="async" alt="صفحهٔ ۴۲ کتاب"/></a><figcaption>۴۲</figcaption></figure>
+<figure class="pg" id="pg-43"><a href="pages/p043.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۴۳ در اندازهٔ کامل"><img src="pages/p043.webp" loading="lazy" decoding="async" alt="صفحهٔ ۴۳ کتاب"/></a><figcaption>۴۳</figcaption></figure>
+<figure class="pg" id="pg-44"><a href="pages/p044.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۴۴ در اندازهٔ کامل"><img src="pages/p044.webp" loading="lazy" decoding="async" alt="صفحهٔ ۴۴ کتاب"/></a><figcaption>۴۴</figcaption></figure>
+<figure class="pg" id="pg-45"><a href="pages/p045.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۴۵ در اندازهٔ کامل"><img src="pages/p045.webp" loading="lazy" decoding="async" alt="صفحهٔ ۴۵ کتاب"/></a><figcaption>۴۵</figcaption></figure>
+<div class="ch-div" id="ch-10"><span class="cpart">بنیادها و مدل ذهنی سیستم نوع</span><h2><b>۱۰</b> · Narrowing و تحلیل جریان کنترل</h2><p class="csub">کامپایلر کد تو را خط‌به‌خط می‌خواند — typeof، in، instanceof و discriminant</p></div>
+<figure class="pg" id="pg-46"><a href="pages/p046.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۴۶ در اندازهٔ کامل"><img src="pages/p046.webp" loading="lazy" decoding="async" alt="صفحهٔ ۴۶ کتاب"/></a><figcaption>۴۶</figcaption></figure>
+<figure class="pg" id="pg-47"><a href="pages/p047.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۴۷ در اندازهٔ کامل"><img src="pages/p047.webp" loading="lazy" decoding="async" alt="صفحهٔ ۴۷ کتاب"/></a><figcaption>۴۷</figcaption></figure>
+<figure class="pg" id="pg-48"><a href="pages/p048.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۴۸ در اندازهٔ کامل"><img src="pages/p048.webp" loading="lazy" decoding="async" alt="صفحهٔ ۴۸ کتاب"/></a><figcaption>۴۸</figcaption></figure>
+<figure class="pg" id="pg-49"><a href="pages/p049.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۴۹ در اندازهٔ کامل"><img src="pages/p049.webp" loading="lazy" decoding="async" alt="صفحهٔ ۴۹ کتاب"/></a><figcaption>۴۹</figcaption></figure>
+<figure class="pg" id="pg-50"><a href="pages/p050.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۵۰ در اندازهٔ کامل"><img src="pages/p050.webp" loading="lazy" decoding="async" alt="صفحهٔ ۵۰ کتاب"/></a><figcaption>۵۰</figcaption></figure>
+<div class="ch-div" id="ch-11"><span class="cpart">بنیادها و مدل ذهنی سیستم نوع</span><h2><b>۱۱</b> · توابع — قرارداد ورودی و خروجی</h2><p class="csub">نوع تابع، پارامتر اختیاری، rest، this و نوع بازگشتی</p></div>
+<figure class="pg" id="pg-51"><a href="pages/p051.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۵۱ در اندازهٔ کامل"><img src="pages/p051.webp" loading="lazy" decoding="async" alt="صفحهٔ ۵۱ کتاب"/></a><figcaption>۵۱</figcaption></figure>
+<figure class="pg" id="pg-52"><a href="pages/p052.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۵۲ در اندازهٔ کامل"><img src="pages/p052.webp" loading="lazy" decoding="async" alt="صفحهٔ ۵۲ کتاب"/></a><figcaption>۵۲</figcaption></figure>
+<figure class="pg" id="pg-53"><a href="pages/p053.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۵۳ در اندازهٔ کامل"><img src="pages/p053.webp" loading="lazy" decoding="async" alt="صفحهٔ ۵۳ کتاب"/></a><figcaption>۵۳</figcaption></figure>
+<figure class="pg" id="pg-54"><a href="pages/p054.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۵۴ در اندازهٔ کامل"><img src="pages/p054.webp" loading="lazy" decoding="async" alt="صفحهٔ ۵۴ کتاب"/></a><figcaption>۵۴</figcaption></figure>
+<figure class="pg" id="pg-55"><a href="pages/p055.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۵۵ در اندازهٔ کامل"><img src="pages/p055.webp" loading="lazy" decoding="async" alt="صفحهٔ ۵۵ کتاب"/></a><figcaption>۵۵</figcaption></figure>
+<div class="ch-div" id="ch-12"><span class="cpart">بنیادها و مدل ذهنی سیستم نوع</span><h2><b>۱۲</b> · آرایه، Tuple، readonly — و هنر خواندن خطای کامپایلر</h2><p class="csub">ساختارهای ترتیبی + روش سیستماتیک تفسیر پیام‌های خطا</p></div>
+<figure class="pg" id="pg-56"><a href="pages/p056.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۵۶ در اندازهٔ کامل"><img src="pages/p056.webp" loading="lazy" decoding="async" alt="صفحهٔ ۵۶ کتاب"/></a><figcaption>۵۶</figcaption></figure>
+<figure class="pg" id="pg-57"><a href="pages/p057.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۵۷ در اندازهٔ کامل"><img src="pages/p057.webp" loading="lazy" decoding="async" alt="صفحهٔ ۵۷ کتاب"/></a><figcaption>۵۷</figcaption></figure>
+<figure class="pg" id="pg-58"><a href="pages/p058.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۵۸ در اندازهٔ کامل"><img src="pages/p058.webp" loading="lazy" decoding="async" alt="صفحهٔ ۵۸ کتاب"/></a><figcaption>۵۸</figcaption></figure>
+<figure class="pg" id="pg-59"><a href="pages/p059.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۵۹ در اندازهٔ کامل"><img src="pages/p059.webp" loading="lazy" decoding="async" alt="صفحهٔ ۵۹ کتاب"/></a><figcaption>۵۹</figcaption></figure>
+<div class="part-div" id="part-2"><span class="plabel">بخش دوم</span><h2>طراحی نوع پیشرفته</h2><p class="psub">اینجا TypeScript از «حاشیه‌نویسی کد» به «زبان طراحی» تبدیل می‌شود. جنریک‌ها، conditional و mapped typeها، template literalها و الگوهای برندسازی نوع — همراه با معیار همیشگی این کتاب: هر abstraction باید هزینه خوانایی و نگه‌داری‌اش را توجیه کند.</p></div>
+<figure class="pg" id="pg-60"><a href="pages/p060.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۶۰ در اندازهٔ کامل"><img src="pages/p060.webp" loading="lazy" decoding="async" alt="صفحهٔ ۶۰ کتاب"/></a><figcaption>۶۰</figcaption></figure>
+<div class="ch-div" id="ch-13"><span class="cpart">طراحی نوع پیشرفته</span><h2><b>۱۳</b> · interface و type — یک انتخاب مهندسی</h2><p class="csub">تفاوت‌های واقعی، declaration merging و قاعده انتخاب در تیم</p></div>
+<figure class="pg" id="pg-61"><a href="pages/p061.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۶۱ در اندازهٔ کامل"><img src="pages/p061.webp" loading="lazy" decoding="async" alt="صفحهٔ ۶۱ کتاب"/></a><figcaption>۶۱</figcaption></figure>
+<figure class="pg" id="pg-62"><a href="pages/p062.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۶۲ در اندازهٔ کامل"><img src="pages/p062.webp" loading="lazy" decoding="async" alt="صفحهٔ ۶۲ کتاب"/></a><figcaption>۶۲</figcaption></figure>
+<figure class="pg" id="pg-63"><a href="pages/p063.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۶۳ در اندازهٔ کامل"><img src="pages/p063.webp" loading="lazy" decoding="async" alt="صفحهٔ ۶۳ کتاب"/></a><figcaption>۶۳</figcaption></figure>
+<figure class="pg" id="pg-64"><a href="pages/p064.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۶۴ در اندازهٔ کامل"><img src="pages/p064.webp" loading="lazy" decoding="async" alt="صفحهٔ ۶۴ کتاب"/></a><figcaption>۶۴</figcaption></figure>
+<div class="ch-div" id="ch-14"><span class="cpart">طراحی نوع پیشرفته</span><h2><b>۱۴</b> · جنریک‌ها — پارامتر نوع، Constraint و Default</h2><p class="csub">متغیرِ نوع: همان منطق پارامتر تابع، یک طبقه بالاتر</p></div>
+<figure class="pg" id="pg-65"><a href="pages/p065.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۶۵ در اندازهٔ کامل"><img src="pages/p065.webp" loading="lazy" decoding="async" alt="صفحهٔ ۶۵ کتاب"/></a><figcaption>۶۵</figcaption></figure>
+<figure class="pg" id="pg-66"><a href="pages/p066.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۶۶ در اندازهٔ کامل"><img src="pages/p066.webp" loading="lazy" decoding="async" alt="صفحهٔ ۶۶ کتاب"/></a><figcaption>۶۶</figcaption></figure>
+<figure class="pg" id="pg-67"><a href="pages/p067.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۶۷ در اندازهٔ کامل"><img src="pages/p067.webp" loading="lazy" decoding="async" alt="صفحهٔ ۶۷ کتاب"/></a><figcaption>۶۷</figcaption></figure>
+<figure class="pg" id="pg-68"><a href="pages/p068.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۶۸ در اندازهٔ کامل"><img src="pages/p068.webp" loading="lazy" decoding="async" alt="صفحهٔ ۶۸ کتاب"/></a><figcaption>۶۸</figcaption></figure>
+<figure class="pg" id="pg-69"><a href="pages/p069.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۶۹ در اندازهٔ کامل"><img src="pages/p069.webp" loading="lazy" decoding="async" alt="صفحهٔ ۶۹ کتاب"/></a><figcaption>۶۹</figcaption></figure>
+<div class="ch-div" id="ch-15"><span class="cpart">طراحی نوع پیشرفته</span><h2><b>۱۵</b> · جنریک در عمل — API و کامپوننت قابل‌استفاده مجدد</h2><p class="csub">از تابع جنریک تا کلاس، interface جنریک و الگوی Builder</p></div>
+<figure class="pg" id="pg-70"><a href="pages/p070.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۷۰ در اندازهٔ کامل"><img src="pages/p070.webp" loading="lazy" decoding="async" alt="صفحهٔ ۷۰ کتاب"/></a><figcaption>۷۰</figcaption></figure>
+<figure class="pg" id="pg-71"><a href="pages/p071.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۷۱ در اندازهٔ کامل"><img src="pages/p071.webp" loading="lazy" decoding="async" alt="صفحهٔ ۷۱ کتاب"/></a><figcaption>۷۱</figcaption></figure>
+<figure class="pg" id="pg-72"><a href="pages/p072.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۷۲ در اندازهٔ کامل"><img src="pages/p072.webp" loading="lazy" decoding="async" alt="صفحهٔ ۷۲ کتاب"/></a><figcaption>۷۲</figcaption></figure>
+<figure class="pg" id="pg-73"><a href="pages/p073.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۷۳ در اندازهٔ کامل"><img src="pages/p073.webp" loading="lazy" decoding="async" alt="صفحهٔ ۷۳ کتاب"/></a><figcaption>۷۳</figcaption></figure>
+<figure class="pg" id="pg-74"><a href="pages/p074.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۷۴ در اندازهٔ کامل"><img src="pages/p074.webp" loading="lazy" decoding="async" alt="صفحهٔ ۷۴ کتاب"/></a><figcaption>۷۴</figcaption></figure>
+<div class="ch-div" id="ch-16"><span class="cpart">طراحی نوع پیشرفته</span><h2><b>۱۶</b> · keyof، typeof و Indexed Access</h2><p class="csub">سه اپراتور کوچک که اتصال نوع‌ها به داده واقعی را ممکن می‌کنند</p></div>
+<figure class="pg" id="pg-75"><a href="pages/p075.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۷۵ در اندازهٔ کامل"><img src="pages/p075.webp" loading="lazy" decoding="async" alt="صفحهٔ ۷۵ کتاب"/></a><figcaption>۷۵</figcaption></figure>
+<figure class="pg" id="pg-76"><a href="pages/p076.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۷۶ در اندازهٔ کامل"><img src="pages/p076.webp" loading="lazy" decoding="async" alt="صفحهٔ ۷۶ کتاب"/></a><figcaption>۷۶</figcaption></figure>
+<figure class="pg" id="pg-77"><a href="pages/p077.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۷۷ در اندازهٔ کامل"><img src="pages/p077.webp" loading="lazy" decoding="async" alt="صفحهٔ ۷۷ کتاب"/></a><figcaption>۷۷</figcaption></figure>
+<figure class="pg" id="pg-78"><a href="pages/p078.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۷۸ در اندازهٔ کامل"><img src="pages/p078.webp" loading="lazy" decoding="async" alt="صفحهٔ ۷۸ کتاب"/></a><figcaption>۷۸</figcaption></figure>
+<figure class="pg" id="pg-79"><a href="pages/p079.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۷۹ در اندازهٔ کامل"><img src="pages/p079.webp" loading="lazy" decoding="async" alt="صفحهٔ ۷۹ کتاب"/></a><figcaption>۷۹</figcaption></figure>
+<div class="ch-div" id="ch-17"><span class="cpart">طراحی نوع پیشرفته</span><h2><b>۱۷</b> · Conditional Types و infer</h2><p class="csub">if/else در سطح نوع — و استخراج نوع از دل ساختارها</p></div>
+<figure class="pg" id="pg-80"><a href="pages/p080.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۸۰ در اندازهٔ کامل"><img src="pages/p080.webp" loading="lazy" decoding="async" alt="صفحهٔ ۸۰ کتاب"/></a><figcaption>۸۰</figcaption></figure>
+<figure class="pg" id="pg-81"><a href="pages/p081.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۸۱ در اندازهٔ کامل"><img src="pages/p081.webp" loading="lazy" decoding="async" alt="صفحهٔ ۸۱ کتاب"/></a><figcaption>۸۱</figcaption></figure>
+<figure class="pg" id="pg-82"><a href="pages/p082.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۸۲ در اندازهٔ کامل"><img src="pages/p082.webp" loading="lazy" decoding="async" alt="صفحهٔ ۸۲ کتاب"/></a><figcaption>۸۲</figcaption></figure>
+<figure class="pg" id="pg-83"><a href="pages/p083.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۸۳ در اندازهٔ کامل"><img src="pages/p083.webp" loading="lazy" decoding="async" alt="صفحهٔ ۸۳ کتاب"/></a><figcaption>۸۳</figcaption></figure>
+<figure class="pg" id="pg-84"><a href="pages/p084.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۸۴ در اندازهٔ کامل"><img src="pages/p084.webp" loading="lazy" decoding="async" alt="صفحهٔ ۸۴ کتاب"/></a><figcaption>۸۴</figcaption></figure>
+<div class="ch-div" id="ch-18"><span class="cpart">طراحی نوع پیشرفته</span><h2><b>۱۸</b> · Mapped Types و Key Remapping</h2><p class="csub">حلقه for روی کلیدها: ساخت نوع از نوع</p></div>
+<figure class="pg" id="pg-85"><a href="pages/p085.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۸۵ در اندازهٔ کامل"><img src="pages/p085.webp" loading="lazy" decoding="async" alt="صفحهٔ ۸۵ کتاب"/></a><figcaption>۸۵</figcaption></figure>
+<figure class="pg" id="pg-86"><a href="pages/p086.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۸۶ در اندازهٔ کامل"><img src="pages/p086.webp" loading="lazy" decoding="async" alt="صفحهٔ ۸۶ کتاب"/></a><figcaption>۸۶</figcaption></figure>
+<figure class="pg" id="pg-87"><a href="pages/p087.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۸۷ در اندازهٔ کامل"><img src="pages/p087.webp" loading="lazy" decoding="async" alt="صفحهٔ ۸۷ کتاب"/></a><figcaption>۸۷</figcaption></figure>
+<figure class="pg" id="pg-88"><a href="pages/p088.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۸۸ در اندازهٔ کامل"><img src="pages/p088.webp" loading="lazy" decoding="async" alt="صفحهٔ ۸۸ کتاب"/></a><figcaption>۸۸</figcaption></figure>
+<div class="ch-div" id="ch-19"><span class="cpart">طراحی نوع پیشرفته</span><h2><b>۱۹</b> · Template Literal Types</h2><p class="csub">رشته‌ها در سطح نوع — از event name تا route تایپ‌شده</p></div>
+<figure class="pg" id="pg-89"><a href="pages/p089.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۸۹ در اندازهٔ کامل"><img src="pages/p089.webp" loading="lazy" decoding="async" alt="صفحهٔ ۸۹ کتاب"/></a><figcaption>۸۹</figcaption></figure>
+<figure class="pg" id="pg-90"><a href="pages/p090.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۹۰ در اندازهٔ کامل"><img src="pages/p090.webp" loading="lazy" decoding="async" alt="صفحهٔ ۹۰ کتاب"/></a><figcaption>۹۰</figcaption></figure>
+<figure class="pg" id="pg-91"><a href="pages/p091.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۹۱ در اندازهٔ کامل"><img src="pages/p091.webp" loading="lazy" decoding="async" alt="صفحهٔ ۹۱ کتاب"/></a><figcaption>۹۱</figcaption></figure>
+<figure class="pg" id="pg-92"><a href="pages/p092.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۹۲ در اندازهٔ کامل"><img src="pages/p092.webp" loading="lazy" decoding="async" alt="صفحهٔ ۹۲ کتاب"/></a><figcaption>۹۲</figcaption></figure>
+<figure class="pg" id="pg-93"><a href="pages/p093.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۹۳ در اندازهٔ کامل"><img src="pages/p093.webp" loading="lazy" decoding="async" alt="صفحهٔ ۹۳ کتاب"/></a><figcaption>۹۳</figcaption></figure>
+<div class="ch-div" id="ch-20"><span class="cpart">طراحی نوع پیشرفته</span><h2><b>۲۰</b> · Utility Types — استاندارد و سفارشی</h2><p class="csub">Partial تا Omit: ابزارهای آماده، و ساخت تبدیل‌های خودت</p></div>
+<figure class="pg" id="pg-94"><a href="pages/p094.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۹۴ در اندازهٔ کامل"><img src="pages/p094.webp" loading="lazy" decoding="async" alt="صفحهٔ ۹۴ کتاب"/></a><figcaption>۹۴</figcaption></figure>
+<figure class="pg" id="pg-95"><a href="pages/p095.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۹۵ در اندازهٔ کامل"><img src="pages/p095.webp" loading="lazy" decoding="async" alt="صفحهٔ ۹۵ کتاب"/></a><figcaption>۹۵</figcaption></figure>
+<figure class="pg" id="pg-96"><a href="pages/p096.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۹۶ در اندازهٔ کامل"><img src="pages/p096.webp" loading="lazy" decoding="async" alt="صفحهٔ ۹۶ کتاب"/></a><figcaption>۹۶</figcaption></figure>
+<figure class="pg" id="pg-97"><a href="pages/p097.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۹۷ در اندازهٔ کامل"><img src="pages/p097.webp" loading="lazy" decoding="async" alt="صفحهٔ ۹۷ کتاب"/></a><figcaption>۹۷</figcaption></figure>
+<div class="ch-div" id="ch-21"><span class="cpart">طراحی نوع پیشرفته</span><h2><b>۲۱</b> · as const، satisfies و Const Type Parameters</h2><p class="csub">سه ابزار برای نگه‌داشتن دقیق‌ترین نوع بدون از دست دادن بررسی</p></div>
+<figure class="pg" id="pg-98"><a href="pages/p098.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۹۸ در اندازهٔ کامل"><img src="pages/p098.webp" loading="lazy" decoding="async" alt="صفحهٔ ۹۸ کتاب"/></a><figcaption>۹۸</figcaption></figure>
+<figure class="pg" id="pg-99"><a href="pages/p099.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۹۹ در اندازهٔ کامل"><img src="pages/p099.webp" loading="lazy" decoding="async" alt="صفحهٔ ۹۹ کتاب"/></a><figcaption>۹۹</figcaption></figure>
+<figure class="pg" id="pg-100"><a href="pages/p100.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۰۰ در اندازهٔ کامل"><img src="pages/p100.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۰۰ کتاب"/></a><figcaption>۱۰۰</figcaption></figure>
+<figure class="pg" id="pg-101"><a href="pages/p101.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۰۱ در اندازهٔ کامل"><img src="pages/p101.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۰۱ کتاب"/></a><figcaption>۱۰۱</figcaption></figure>
+<figure class="pg" id="pg-102"><a href="pages/p102.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۰۲ در اندازهٔ کامل"><img src="pages/p102.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۰۲ کتاب"/></a><figcaption>۱۰۲</figcaption></figure>
+<div class="ch-div" id="ch-22"><span class="cpart">طراحی نوع پیشرفته</span><h2><b>۲۲</b> · Discriminated Union و Exhaustiveness</h2><p class="csub">مهم‌ترین الگوی مدل‌سازی در TypeScript واقعی</p></div>
+<figure class="pg" id="pg-103"><a href="pages/p103.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۰۳ در اندازهٔ کامل"><img src="pages/p103.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۰۳ کتاب"/></a><figcaption>۱۰۳</figcaption></figure>
+<figure class="pg" id="pg-104"><a href="pages/p104.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۰۴ در اندازهٔ کامل"><img src="pages/p104.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۰۴ کتاب"/></a><figcaption>۱۰۴</figcaption></figure>
+<figure class="pg" id="pg-105"><a href="pages/p105.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۰۵ در اندازهٔ کامل"><img src="pages/p105.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۰۵ کتاب"/></a><figcaption>۱۰۵</figcaption></figure>
+<figure class="pg" id="pg-106"><a href="pages/p106.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۰۶ در اندازهٔ کامل"><img src="pages/p106.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۰۶ کتاب"/></a><figcaption>۱۰۶</figcaption></figure>
+<figure class="pg" id="pg-107"><a href="pages/p107.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۰۷ در اندازهٔ کامل"><img src="pages/p107.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۰۷ کتاب"/></a><figcaption>۱۰۷</figcaption></figure>
+<div class="ch-div" id="ch-23"><span class="cpart">طراحی نوع پیشرفته</span><h2><b>۲۳</b> · Type Predicate، Assertion Function و Branded Types</h2><p class="csub">گسترش narrowing با توابع خودت — و نوع اسمی روی زیرساخت ساختاری</p></div>
+<figure class="pg" id="pg-108"><a href="pages/p108.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۰۸ در اندازهٔ کامل"><img src="pages/p108.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۰۸ کتاب"/></a><figcaption>۱۰۸</figcaption></figure>
+<figure class="pg" id="pg-109"><a href="pages/p109.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۰۹ در اندازهٔ کامل"><img src="pages/p109.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۰۹ کتاب"/></a><figcaption>۱۰۹</figcaption></figure>
+<figure class="pg" id="pg-110"><a href="pages/p110.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۱۰ در اندازهٔ کامل"><img src="pages/p110.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۱۰ کتاب"/></a><figcaption>۱۱۰</figcaption></figure>
+<figure class="pg" id="pg-111"><a href="pages/p111.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۱۱ در اندازهٔ کامل"><img src="pages/p111.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۱۱ کتاب"/></a><figcaption>۱۱۱</figcaption></figure>
+<figure class="pg" id="pg-112"><a href="pages/p112.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۱۲ در اندازهٔ کامل"><img src="pages/p112.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۱۲ کتاب"/></a><figcaption>۱۱۲</figcaption></figure>
+<div class="ch-div" id="ch-24"><span class="cpart">طراحی نوع پیشرفته</span><h2><b>۲۴</b> · Variance و سازگاری توابع</h2><p class="csub">چرا (x: Animal) =&gt; void به (x: Cat) =&gt; void قابل انتساب است — و برعکس نه</p></div>
+<figure class="pg" id="pg-113"><a href="pages/p113.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۱۳ در اندازهٔ کامل"><img src="pages/p113.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۱۳ کتاب"/></a><figcaption>۱۱۳</figcaption></figure>
+<figure class="pg" id="pg-114"><a href="pages/p114.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۱۴ در اندازهٔ کامل"><img src="pages/p114.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۱۴ کتاب"/></a><figcaption>۱۱۴</figcaption></figure>
+<figure class="pg" id="pg-115"><a href="pages/p115.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۱۵ در اندازهٔ کامل"><img src="pages/p115.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۱۵ کتاب"/></a><figcaption>۱۱۵</figcaption></figure>
+<figure class="pg" id="pg-116"><a href="pages/p116.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۱۶ در اندازهٔ کامل"><img src="pages/p116.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۱۶ کتاب"/></a><figcaption>۱۱۶</figcaption></figure>
+<figure class="pg" id="pg-117"><a href="pages/p117.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۱۷ در اندازهٔ کامل"><img src="pages/p117.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۱۷ کتاب"/></a><figcaption>۱۱۷</figcaption></figure>
+<div class="ch-div" id="ch-25"><span class="cpart">طراحی نوع پیشرفته</span><h2><b>۲۵</b> · Overload، Declaration Merging و Module Augmentation</h2><p class="csub">چند امضا برای یک تابع، و گسترش نوع‌های دیگران</p></div>
+<figure class="pg" id="pg-118"><a href="pages/p118.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۱۸ در اندازهٔ کامل"><img src="pages/p118.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۱۸ کتاب"/></a><figcaption>۱۱۸</figcaption></figure>
+<figure class="pg" id="pg-119"><a href="pages/p119.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۱۹ در اندازهٔ کامل"><img src="pages/p119.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۱۹ کتاب"/></a><figcaption>۱۱۹</figcaption></figure>
+<figure class="pg" id="pg-120"><a href="pages/p120.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۲۰ در اندازهٔ کامل"><img src="pages/p120.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۲۰ کتاب"/></a><figcaption>۱۲۰</figcaption></figure>
+<figure class="pg" id="pg-121"><a href="pages/p121.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۲۱ در اندازهٔ کامل"><img src="pages/p121.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۲۱ کتاب"/></a><figcaption>۱۲۱</figcaption></figure>
+<div class="ch-div" id="ch-26"><span class="cpart">طراحی نوع پیشرفته</span><h2><b>۲۶</b> · برنامه‌نویسی Type-Level — قدرت، هزینه و مرز عقل</h2><p class="csub">نوع‌های بازگشتی، کارایی کامپایلر و طراحی API عمومی خوانا</p></div>
+<figure class="pg" id="pg-122"><a href="pages/p122.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۲۲ در اندازهٔ کامل"><img src="pages/p122.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۲۲ کتاب"/></a><figcaption>۱۲۲</figcaption></figure>
+<figure class="pg" id="pg-123"><a href="pages/p123.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۲۳ در اندازهٔ کامل"><img src="pages/p123.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۲۳ کتاب"/></a><figcaption>۱۲۳</figcaption></figure>
+<figure class="pg" id="pg-124"><a href="pages/p124.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۲۴ در اندازهٔ کامل"><img src="pages/p124.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۲۴ کتاب"/></a><figcaption>۱۲۴</figcaption></figure>
+<figure class="pg" id="pg-125"><a href="pages/p125.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۲۵ در اندازهٔ کامل"><img src="pages/p125.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۲۵ کتاب"/></a><figcaption>۱۲۵</figcaption></figure>
+<div class="part-div" id="part-3"><span class="plabel">بخش سوم</span><h2>کامپایلر، ابزار و معماری</h2><p class="psub">TypeScript فقط یک زبان نیست؛ یک زنجیره ابزار است. این بخش ماژول‌ها و resolution، فایل‌های اعلان، مهاجرت تدریجی، تست نوع، CI و گذار تاریخی TypeScript 6 به 7 (کامپایلر native) را پوشش می‌دهد — با معیار انتخاب، نه فهرست گزینه‌ها.</p></div>
+<figure class="pg" id="pg-126"><a href="pages/p126.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۲۶ در اندازهٔ کامل"><img src="pages/p126.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۲۶ کتاب"/></a><figcaption>۱۲۶</figcaption></figure>
+<div class="ch-div" id="ch-27"><span class="cpart">کامپایلر، ابزار و معماری</span><h2><b>۲۷</b> · خانواده strict — طراحی سطح سخت‌گیری</h2><p class="csub">از noImplicitAny تا exactOptionalPropertyTypes و noUncheckedIndexedAccess</p></div>
+<figure class="pg" id="pg-127"><a href="pages/p127.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۲۷ در اندازهٔ کامل"><img src="pages/p127.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۲۷ کتاب"/></a><figcaption>۱۲۷</figcaption></figure>
+<figure class="pg" id="pg-128"><a href="pages/p128.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۲۸ در اندازهٔ کامل"><img src="pages/p128.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۲۸ کتاب"/></a><figcaption>۱۲۸</figcaption></figure>
+<figure class="pg" id="pg-129"><a href="pages/p129.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۲۹ در اندازهٔ کامل"><img src="pages/p129.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۲۹ کتاب"/></a><figcaption>۱۲۹</figcaption></figure>
+<figure class="pg" id="pg-130"><a href="pages/p130.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۳۰ در اندازهٔ کامل"><img src="pages/p130.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۳۰ کتاب"/></a><figcaption>۱۳۰</figcaption></figure>
+<div class="ch-div" id="ch-28"><span class="cpart">کامپایلر، ابزار و معماری</span><h2><b>۲۸</b> · ماژول‌ها — ESM، CommonJS و Module Resolution</h2><p class="csub">target، lib، module و nodenext؛ جایی که بیشتر پروژه‌ها زمین می‌خورند</p></div>
+<figure class="pg" id="pg-131"><a href="pages/p131.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۳۱ در اندازهٔ کامل"><img src="pages/p131.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۳۱ کتاب"/></a><figcaption>۱۳۱</figcaption></figure>
+<figure class="pg" id="pg-132"><a href="pages/p132.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۳۲ در اندازهٔ کامل"><img src="pages/p132.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۳۲ کتاب"/></a><figcaption>۱۳۲</figcaption></figure>
+<figure class="pg" id="pg-133"><a href="pages/p133.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۳۳ در اندازهٔ کامل"><img src="pages/p133.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۳۳ کتاب"/></a><figcaption>۱۳۳</figcaption></figure>
+<figure class="pg" id="pg-134"><a href="pages/p134.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۳۴ در اندازهٔ کامل"><img src="pages/p134.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۳۴ کتاب"/></a><figcaption>۱۳۴</figcaption></figure>
+<div class="ch-div" id="ch-29"><span class="cpart">کامپایلر، ابزار و معماری</span><h2><b>۲۹</b> · فایل‌های اعلان و @types</h2><p class="csub">d.ts، DefinitelyTyped و نوشتن اعلان برای کد بدون نوع</p></div>
+<figure class="pg" id="pg-135"><a href="pages/p135.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۳۵ در اندازهٔ کامل"><img src="pages/p135.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۳۵ کتاب"/></a><figcaption>۱۳۵</figcaption></figure>
+<figure class="pg" id="pg-136"><a href="pages/p136.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۳۶ در اندازهٔ کامل"><img src="pages/p136.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۳۶ کتاب"/></a><figcaption>۱۳۶</figcaption></figure>
+<figure class="pg" id="pg-137"><a href="pages/p137.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۳۷ در اندازهٔ کامل"><img src="pages/p137.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۳۷ کتاب"/></a><figcaption>۱۳۷</figcaption></figure>
+<figure class="pg" id="pg-138"><a href="pages/p138.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۳۸ در اندازهٔ کامل"><img src="pages/p138.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۳۸ کتاب"/></a><figcaption>۱۳۸</figcaption></figure>
+<figure class="pg" id="pg-139"><a href="pages/p139.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۳۹ در اندازهٔ کامل"><img src="pages/p139.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۳۹ کتاب"/></a><figcaption>۱۳۹</figcaption></figure>
+<div class="ch-div" id="ch-30"><span class="cpart">کامپایلر، ابزار و معماری</span><h2><b>۳۰</b> · مهاجرت از JavaScript — تدریجی و قابل برگشت</h2><p class="csub">checkJs، JSDoc و استراتژی مهاجرت ماژول‌به‌ماژول</p></div>
+<figure class="pg" id="pg-140"><a href="pages/p140.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۴۰ در اندازهٔ کامل"><img src="pages/p140.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۴۰ کتاب"/></a><figcaption>۱۴۰</figcaption></figure>
+<figure class="pg" id="pg-141"><a href="pages/p141.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۴۱ در اندازهٔ کامل"><img src="pages/p141.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۴۱ کتاب"/></a><figcaption>۱۴۱</figcaption></figure>
+<figure class="pg" id="pg-142"><a href="pages/p142.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۴۲ در اندازهٔ کامل"><img src="pages/p142.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۴۲ کتاب"/></a><figcaption>۱۴۲</figcaption></figure>
+<figure class="pg" id="pg-143"><a href="pages/p143.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۴۳ در اندازهٔ کامل"><img src="pages/p143.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۴۳ کتاب"/></a><figcaption>۱۴۳</figcaption></figure>
+<div class="ch-div" id="ch-31"><span class="cpart">کامپایلر، ابزار و معماری</span><h2><b>۳۱</b> · Project References، Monorepo و CI</h2><p class="csub">بررسی نوع تکرارپذیر در مقیاس تیم</p></div>
+<figure class="pg" id="pg-144"><a href="pages/p144.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۴۴ در اندازهٔ کامل"><img src="pages/p144.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۴۴ کتاب"/></a><figcaption>۱۴۴</figcaption></figure>
+<figure class="pg" id="pg-145"><a href="pages/p145.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۴۵ در اندازهٔ کامل"><img src="pages/p145.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۴۵ کتاب"/></a><figcaption>۱۴۵</figcaption></figure>
+<figure class="pg" id="pg-146"><a href="pages/p146.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۴۶ در اندازهٔ کامل"><img src="pages/p146.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۴۶ کتاب"/></a><figcaption>۱۴۶</figcaption></figure>
+<figure class="pg" id="pg-147"><a href="pages/p147.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۴۷ در اندازهٔ کامل"><img src="pages/p147.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۴۷ کتاب"/></a><figcaption>۱۴۷</figcaption></figure>
+<div class="ch-div" id="ch-32"><span class="cpart">کامپایلر، ابزار و معماری</span><h2><b>۳۲</b> · تست نوع، دیباگ خطاهای پیچیده و کارایی کامپایلر</h2><p class="csub">جلوگیری از رگرسیون نوع و پروفایل‌گیری عملی</p></div>
+<figure class="pg" id="pg-148"><a href="pages/p148.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۴۸ در اندازهٔ کامل"><img src="pages/p148.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۴۸ کتاب"/></a><figcaption>۱۴۸</figcaption></figure>
+<figure class="pg" id="pg-149"><a href="pages/p149.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۴۹ در اندازهٔ کامل"><img src="pages/p149.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۴۹ کتاب"/></a><figcaption>۱۴۹</figcaption></figure>
+<figure class="pg" id="pg-150"><a href="pages/p150.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۵۰ در اندازهٔ کامل"><img src="pages/p150.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۵۰ کتاب"/></a><figcaption>۱۵۰</figcaption></figure>
+<figure class="pg" id="pg-151"><a href="pages/p151.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۵۱ در اندازهٔ کامل"><img src="pages/p151.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۵۱ کتاب"/></a><figcaption>۱۵۱</figcaption></figure>
+<figure class="pg" id="pg-152"><a href="pages/p152.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۵۲ در اندازهٔ کامل"><img src="pages/p152.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۵۲ کتاب"/></a><figcaption>۱۵۲</figcaption></figure>
+<div class="ch-div" id="ch-33"><span class="cpart">کامپایلر، ابزار و معماری</span><h2><b>۳۳</b> · گذار TypeScript 6 به 7 — کامپایلر Native</h2><p class="csub">وضعیت ۲۰۲۶: پورت Go، deprecationها و برنامه مهاجرت ابزارها</p></div>
+<figure class="pg" id="pg-153"><a href="pages/p153.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۵۳ در اندازهٔ کامل"><img src="pages/p153.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۵۳ کتاب"/></a><figcaption>۱۵۳</figcaption></figure>
+<figure class="pg" id="pg-154"><a href="pages/p154.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۵۴ در اندازهٔ کامل"><img src="pages/p154.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۵۴ کتاب"/></a><figcaption>۱۵۴</figcaption></figure>
+<figure class="pg" id="pg-155"><a href="pages/p155.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۵۵ در اندازهٔ کامل"><img src="pages/p155.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۵۵ کتاب"/></a><figcaption>۱۵۵</figcaption></figure>
+<figure class="pg" id="pg-156"><a href="pages/p156.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۵۶ در اندازهٔ کامل"><img src="pages/p156.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۵۶ کتاب"/></a><figcaption>۱۵۶</figcaption></figure>
+<div class="part-div" id="part-4"><span class="plabel">بخش چهارم</span><h2>TypeScript در سیستم‌های Production</h2><p class="psub">بخش پایانی، همه ابزارهای کتاب را به مسئله‌های واقعی وصل می‌کند: مرز داده بیرونی و اعتبارسنجی runtime، کلاینت API با مدل خطای صریح، مدل‌سازی دامنه، React و Next.js، فرم‌ها و stateهای ناهمگام، و انتشار پکیج با تست نوع. هشت پروژه کامل این بخش، ستون عملی کتاب‌اند.</p></div>
+<figure class="pg" id="pg-157"><a href="pages/p157.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۵۷ در اندازهٔ کامل"><img src="pages/p157.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۵۷ کتاب"/></a><figcaption>۱۵۷</figcaption></figure>
+<div class="ch-div" id="ch-34"><span class="cpart">TypeScript در سیستم‌های Production</span><h2><b>۳۴</b> · مرز داده بیرونی — اعتبارسنجی Runtime با Zod</h2><p class="csub">پروژه ۱: نوع ایستا هیچ تضمینی درباره JSON واقعی نمی‌دهد</p></div>
+<figure class="pg" id="pg-158"><a href="pages/p158.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۵۸ در اندازهٔ کامل"><img src="pages/p158.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۵۸ کتاب"/></a><figcaption>۱۵۸</figcaption></figure>
+<figure class="pg" id="pg-159"><a href="pages/p159.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۵۹ در اندازهٔ کامل"><img src="pages/p159.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۵۹ کتاب"/></a><figcaption>۱۵۹</figcaption></figure>
+<figure class="pg" id="pg-160"><a href="pages/p160.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۶۰ در اندازهٔ کامل"><img src="pages/p160.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۶۰ کتاب"/></a><figcaption>۱۶۰</figcaption></figure>
+<figure class="pg" id="pg-161"><a href="pages/p161.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۶۱ در اندازهٔ کامل"><img src="pages/p161.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۶۱ کتاب"/></a><figcaption>۱۶۱</figcaption></figure>
+<figure class="pg" id="pg-162"><a href="pages/p162.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۶۲ در اندازهٔ کامل"><img src="pages/p162.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۶۲ کتاب"/></a><figcaption>۱۶۲</figcaption></figure>
+<div class="ch-div" id="ch-35"><span class="cpart">TypeScript در سیستم‌های Production</span><h2><b>۳۵</b> · کلاینت API تایپ‌شده با مدل خطای صریح</h2><p class="csub">پروژه ۲: Result به‌جای exception — خطا به‌عنوان داده</p></div>
+<figure class="pg" id="pg-163"><a href="pages/p163.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۶۳ در اندازهٔ کامل"><img src="pages/p163.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۶۳ کتاب"/></a><figcaption>۱۶۳</figcaption></figure>
+<figure class="pg" id="pg-164"><a href="pages/p164.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۶۴ در اندازهٔ کامل"><img src="pages/p164.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۶۴ کتاب"/></a><figcaption>۱۶۴</figcaption></figure>
+<figure class="pg" id="pg-165"><a href="pages/p165.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۶۵ در اندازهٔ کامل"><img src="pages/p165.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۶۵ کتاب"/></a><figcaption>۱۶۵</figcaption></figure>
+<figure class="pg" id="pg-166"><a href="pages/p166.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۶۶ در اندازهٔ کامل"><img src="pages/p166.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۶۶ کتاب"/></a><figcaption>۱۶۶</figcaption></figure>
+<figure class="pg" id="pg-167"><a href="pages/p167.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۶۷ در اندازهٔ کامل"><img src="pages/p167.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۶۷ کتاب"/></a><figcaption>۱۶۷</figcaption></figure>
+<div class="ch-div" id="ch-36"><span class="cpart">TypeScript در سیستم‌های Production</span><h2><b>۳۶</b> · مدل‌سازی دامنه و ماشین حالت</h2><p class="csub">پروژه ۳ و ۴: invariantهای کسب‌وکار در سطح نوع + state machine</p></div>
+<figure class="pg" id="pg-168"><a href="pages/p168.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۶۸ در اندازهٔ کامل"><img src="pages/p168.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۶۸ کتاب"/></a><figcaption>۱۶۸</figcaption></figure>
+<figure class="pg" id="pg-169"><a href="pages/p169.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۶۹ در اندازهٔ کامل"><img src="pages/p169.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۶۹ کتاب"/></a><figcaption>۱۶۹</figcaption></figure>
+<figure class="pg" id="pg-170"><a href="pages/p170.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۷۰ در اندازهٔ کامل"><img src="pages/p170.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۷۰ کتاب"/></a><figcaption>۱۷۰</figcaption></figure>
+<figure class="pg" id="pg-171"><a href="pages/p171.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۷۱ در اندازهٔ کامل"><img src="pages/p171.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۷۱ کتاب"/></a><figcaption>۱۷۱</figcaption></figure>
+<figure class="pg" id="pg-172"><a href="pages/p172.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۷۲ در اندازهٔ کامل"><img src="pages/p172.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۷۲ کتاب"/></a><figcaption>۱۷۲</figcaption></figure>
+<div class="ch-div" id="ch-37"><span class="cpart">TypeScript در سیستم‌های Production</span><h2><b>۳۷</b> · React با TypeScript</h2><p class="csub">پروژه ۵: props، hookها، context، reducer و کامپوننت جنریک</p></div>
+<figure class="pg" id="pg-173"><a href="pages/p173.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۷۳ در اندازهٔ کامل"><img src="pages/p173.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۷۳ کتاب"/></a><figcaption>۱۷۳</figcaption></figure>
+<figure class="pg" id="pg-174"><a href="pages/p174.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۷۴ در اندازهٔ کامل"><img src="pages/p174.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۷۴ کتاب"/></a><figcaption>۱۷۴</figcaption></figure>
+<figure class="pg" id="pg-175"><a href="pages/p175.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۷۵ در اندازهٔ کامل"><img src="pages/p175.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۷۵ کتاب"/></a><figcaption>۱۷۵</figcaption></figure>
+<figure class="pg" id="pg-176"><a href="pages/p176.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۷۶ در اندازهٔ کامل"><img src="pages/p176.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۷۶ کتاب"/></a><figcaption>۱۷۶</figcaption></figure>
+<figure class="pg" id="pg-177"><a href="pages/p177.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۷۷ در اندازهٔ کامل"><img src="pages/p177.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۷۷ کتاب"/></a><figcaption>۱۷۷</figcaption></figure>
+<figure class="pg" id="pg-178"><a href="pages/p178.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۷۸ در اندازهٔ کامل"><img src="pages/p178.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۷۸ کتاب"/></a><figcaption>۱۷۸</figcaption></figure>
+<div class="ch-div" id="ch-38"><span class="cpart">TypeScript در سیستم‌های Production</span><h2><b>۳۸</b> · Next.js — مرز سرور و کلاینت</h2><p class="csub">پروژه ۶: route handlerها، serialization و قرارداد API</p></div>
+<figure class="pg" id="pg-179"><a href="pages/p179.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۷۹ در اندازهٔ کامل"><img src="pages/p179.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۷۹ کتاب"/></a><figcaption>۱۷۹</figcaption></figure>
+<figure class="pg" id="pg-180"><a href="pages/p180.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۸۰ در اندازهٔ کامل"><img src="pages/p180.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۸۰ کتاب"/></a><figcaption>۱۸۰</figcaption></figure>
+<figure class="pg" id="pg-181"><a href="pages/p181.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۸۱ در اندازهٔ کامل"><img src="pages/p181.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۸۱ کتاب"/></a><figcaption>۱۸۱</figcaption></figure>
+<figure class="pg" id="pg-182"><a href="pages/p182.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۸۲ در اندازهٔ کامل"><img src="pages/p182.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۸۲ کتاب"/></a><figcaption>۱۸۲</figcaption></figure>
+<figure class="pg" id="pg-183"><a href="pages/p183.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۸۳ در اندازهٔ کامل"><img src="pages/p183.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۸۳ کتاب"/></a><figcaption>۱۸۳</figcaption></figure>
+<div class="ch-div" id="ch-39"><span class="cpart">TypeScript در سیستم‌های Production</span><h2><b>۳۹</b> · فرم‌ها، State ناهمگام و Event Emitter تایپ‌شده</h2><p class="csub">پروژه ۷: چرخه کامل فرم + ابزار کتابخانه‌ای با نگاشت رویداد</p></div>
+<figure class="pg" id="pg-184"><a href="pages/p184.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۸۴ در اندازهٔ کامل"><img src="pages/p184.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۸۴ کتاب"/></a><figcaption>۱۸۴</figcaption></figure>
+<figure class="pg" id="pg-185"><a href="pages/p185.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۸۵ در اندازهٔ کامل"><img src="pages/p185.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۸۵ کتاب"/></a><figcaption>۱۸۵</figcaption></figure>
+<figure class="pg" id="pg-186"><a href="pages/p186.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۸۶ در اندازهٔ کامل"><img src="pages/p186.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۸۶ کتاب"/></a><figcaption>۱۸۶</figcaption></figure>
+<figure class="pg" id="pg-187"><a href="pages/p187.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۸۷ در اندازهٔ کامل"><img src="pages/p187.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۸۷ کتاب"/></a><figcaption>۱۸۷</figcaption></figure>
+<figure class="pg" id="pg-188"><a href="pages/p188.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۸۸ در اندازهٔ کامل"><img src="pages/p188.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۸۸ کتاب"/></a><figcaption>۱۸۸</figcaption></figure>
+<figure class="pg" id="pg-189"><a href="pages/p189.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۸۹ در اندازهٔ کامل"><img src="pages/p189.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۸۹ کتاب"/></a><figcaption>۱۸۹</figcaption></figure>
+<div class="ch-div" id="ch-40"><span class="cpart">TypeScript در سیستم‌های Production</span><h2><b>۴۰</b> · انتشار پکیج — اعلان عمومی و تست نوع</h2><p class="csub">پروژه ۸: از declaration emit تا جلوگیری از شکستن مصرف‌کننده‌ها</p></div>
+<figure class="pg" id="pg-190"><a href="pages/p190.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۹۰ در اندازهٔ کامل"><img src="pages/p190.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۹۰ کتاب"/></a><figcaption>۱۹۰</figcaption></figure>
+<figure class="pg" id="pg-191"><a href="pages/p191.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۹۱ در اندازهٔ کامل"><img src="pages/p191.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۹۱ کتاب"/></a><figcaption>۱۹۱</figcaption></figure>
+<figure class="pg" id="pg-192"><a href="pages/p192.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۹۲ در اندازهٔ کامل"><img src="pages/p192.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۹۲ کتاب"/></a><figcaption>۱۹۲</figcaption></figure>
+<div class="part-div" id="apps"><span class="plabel">پیوست‌ها</span><h2>مرجع‌های کاربردی پایان کتاب</h2><p class="psub">از ۵۰ پرسش مصاحبه تا واژه‌نامه، چک‌لیست مهاجرت و الگوهای طراحی نوع</p></div>
+<figure class="pg" id="pg-193"><a href="pages/p193.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۹۳ در اندازهٔ کامل"><img src="pages/p193.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۹۳ کتاب"/></a><figcaption>۱۹۳</figcaption></figure>
+<figure class="pg" id="pg-194"><a href="pages/p194.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۹۴ در اندازهٔ کامل"><img src="pages/p194.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۹۴ کتاب"/></a><figcaption>۱۹۴</figcaption></figure>
+<div class="ch-div" id="app-195"><span class="cpart">پیوست</span><h2>۵۰ پرسش مصاحبه با پاسخ تشریحی</h2></div>
+<figure class="pg" id="pg-195"><a href="pages/p195.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۹۵ در اندازهٔ کامل"><img src="pages/p195.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۹۵ کتاب"/></a><figcaption>۱۹۵</figcaption></figure>
+<figure class="pg" id="pg-196"><a href="pages/p196.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۹۶ در اندازهٔ کامل"><img src="pages/p196.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۹۶ کتاب"/></a><figcaption>۱۹۶</figcaption></figure>
+<figure class="pg" id="pg-197"><a href="pages/p197.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۹۷ در اندازهٔ کامل"><img src="pages/p197.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۹۷ کتاب"/></a><figcaption>۱۹۷</figcaption></figure>
+<figure class="pg" id="pg-198"><a href="pages/p198.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۹۸ در اندازهٔ کامل"><img src="pages/p198.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۹۸ کتاب"/></a><figcaption>۱۹۸</figcaption></figure>
+<figure class="pg" id="pg-199"><a href="pages/p199.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۱۹۹ در اندازهٔ کامل"><img src="pages/p199.webp" loading="lazy" decoding="async" alt="صفحهٔ ۱۹۹ کتاب"/></a><figcaption>۱۹۹</figcaption></figure>
+<figure class="pg" id="pg-200"><a href="pages/p200.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۰۰ در اندازهٔ کامل"><img src="pages/p200.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۰۰ کتاب"/></a><figcaption>۲۰۰</figcaption></figure>
+<figure class="pg" id="pg-201"><a href="pages/p201.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۰۱ در اندازهٔ کامل"><img src="pages/p201.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۰۱ کتاب"/></a><figcaption>۲۰۱</figcaption></figure>
+<div class="ch-div" id="app-202"><span class="cpart">پیوست</span><h2>واژه‌نامه فارسی–انگلیسی</h2></div>
+<figure class="pg" id="pg-202"><a href="pages/p202.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۰۲ در اندازهٔ کامل"><img src="pages/p202.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۰۲ کتاب"/></a><figcaption>۲۰۲</figcaption></figure>
+<figure class="pg" id="pg-203"><a href="pages/p203.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۰۳ در اندازهٔ کامل"><img src="pages/p203.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۰۳ کتاب"/></a><figcaption>۲۰۳</figcaption></figure>
+<figure class="pg" id="pg-204"><a href="pages/p204.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۰۴ در اندازهٔ کامل"><img src="pages/p204.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۰۴ کتاب"/></a><figcaption>۲۰۴</figcaption></figure>
+<div class="ch-div" id="app-205"><span class="cpart">پیوست</span><h2>مرجع تصمیم گزینه‌های کامپایلر</h2></div>
+<figure class="pg" id="pg-205"><a href="pages/p205.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۰۵ در اندازهٔ کامل"><img src="pages/p205.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۰۵ کتاب"/></a><figcaption>۲۰۵</figcaption></figure>
+<figure class="pg" id="pg-206"><a href="pages/p206.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۰۶ در اندازهٔ کامل"><img src="pages/p206.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۰۶ کتاب"/></a><figcaption>۲۰۶</figcaption></figure>
+<figure class="pg" id="pg-207"><a href="pages/p207.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۰۷ در اندازهٔ کامل"><img src="pages/p207.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۰۷ کتاب"/></a><figcaption>۲۰۷</figcaption></figure>
+<div class="ch-div" id="app-208"><span class="cpart">پیوست</span><h2>راهنمای عیب‌یابی سیستم نوع</h2></div>
+<figure class="pg" id="pg-208"><a href="pages/p208.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۰۸ در اندازهٔ کامل"><img src="pages/p208.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۰۸ کتاب"/></a><figcaption>۲۰۸</figcaption></figure>
+<figure class="pg" id="pg-209"><a href="pages/p209.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۰۹ در اندازهٔ کامل"><img src="pages/p209.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۰۹ کتاب"/></a><figcaption>۲۰۹</figcaption></figure>
+<div class="ch-div" id="app-210"><span class="cpart">پیوست</span><h2>چک‌لیست مهاجرت از JavaScript</h2></div>
+<figure class="pg" id="pg-210"><a href="pages/p210.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۱۰ در اندازهٔ کامل"><img src="pages/p210.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۱۰ کتاب"/></a><figcaption>۲۱۰</figcaption></figure>
+<figure class="pg" id="pg-211"><a href="pages/p211.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۱۱ در اندازهٔ کامل"><img src="pages/p211.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۱۱ کتاب"/></a><figcaption>۲۱۱</figcaption></figure>
+<div class="ch-div" id="app-212"><span class="cpart">پیوست</span><h2>الگوهای طراحی نوع قابل‌استفاده مجدد</h2></div>
+<figure class="pg" id="pg-212"><a href="pages/p212.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۱۲ در اندازهٔ کامل"><img src="pages/p212.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۱۲ کتاب"/></a><figcaption>۲۱۲</figcaption></figure>
+<figure class="pg" id="pg-213"><a href="pages/p213.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۱۳ در اندازهٔ کامل"><img src="pages/p213.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۱۳ کتاب"/></a><figcaption>۲۱۳</figcaption></figure>
+<figure class="pg" id="pg-214"><a href="pages/p214.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۱۴ در اندازهٔ کامل"><img src="pages/p214.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۱۴ کتاب"/></a><figcaption>۲۱۴</figcaption></figure>
+<figure class="pg" id="pg-215"><a href="pages/p215.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۱۵ در اندازهٔ کامل"><img src="pages/p215.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۱۵ کتاب"/></a><figcaption>۲۱۵</figcaption></figure>
+<div class="ch-div" id="app-216"><span class="cpart">پیوست</span><h2>نقشه راه نهایی</h2></div>
+<figure class="pg" id="pg-216"><a href="pages/p216.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۱۶ در اندازهٔ کامل"><img src="pages/p216.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۱۶ کتاب"/></a><figcaption>۲۱۶</figcaption></figure>
+<figure class="pg" id="pg-217"><a href="pages/p217.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۱۷ در اندازهٔ کامل"><img src="pages/p217.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۱۷ کتاب"/></a><figcaption>۲۱۷</figcaption></figure>
+<div class="ch-div" id="app-218"><span class="cpart">پیوست</span><h2>منابع و مآخذ</h2></div>
+<figure class="pg" id="pg-218"><a href="pages/p218.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۱۸ در اندازهٔ کامل"><img src="pages/p218.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۱۸ کتاب"/></a><figcaption>۲۱۸</figcaption></figure>
+<figure class="pg" id="pg-219"><a href="pages/p219.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۱۹ در اندازهٔ کامل"><img src="pages/p219.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۱۹ کتاب"/></a><figcaption>۲۱۹</figcaption></figure>
+<div class="ch-div"><span class="cpart">پایان</span><h2>پشت جلد</h2></div>
+<figure class="pg" id="pg-220"><a href="pages/p220.webp" target="_blank" rel="noopener" title="بازکردن صفحهٔ ۲۲۰ در اندازهٔ کامل"><img src="pages/p220.webp" loading="lazy" decoding="async" alt="صفحهٔ ۲۲۰ کتاب"/></a><figcaption>۲۲۰</figcaption></figure>
+</main>
+
+<button id="toTop" aria-label="بازگشت به بالا"><svg class="i"><use href="#i-up"/></svg></button>
+
+<footer>
+  <div class="fin">
+    <span>© ۲۰۲۶ محمدرضا رضائیان — مرجع جامع TypeScript</span>
+    <span class="lnk">
+      <a href="../"><svg class="i"><use href="#i-home"/></svg> صفحه کتاب</a>
+      <a href="https://github.com/rezaian-dev/typescript-persian-guide"><svg class="i f"><use href="#i-github"/></svg> GitHub</a>
+      <span>ساخته‌شده با <svg class="i f heart"><use href="#i-heart"/></svg></span>
+    </span>
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/motion@12.23.26/dist/motion.js"></script>
 <script>
 (function(){
-  if(!window.Motion || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  const {animate, stagger} = Motion;
-  animate(".bar > *, .bar .nav > *",{opacity:[0,1],y:[-10,0]},{duration:.45,delay:stagger(.06),ease:[.22,1,.36,1]});
-  animate("#stage",{opacity:[0,1],scale:[.97,1]},{duration:.6,delay:.2,ease:[.22,1,.36,1]});
+  const jump=document.getElementById("jump");
+  jump.addEventListener("change",()=>{const el=document.getElementById(jump.value);if(el)el.scrollIntoView({behavior:"smooth",block:"start"});jump.blur();});
+  const q=new URLSearchParams(location.search).get("page");
+  if(q){const el=document.getElementById("pg-"+parseInt(q,10));if(el)setTimeout(()=>el.scrollIntoView({block:"start"}),250);}
+  const tt=document.getElementById("toTop");
+  addEventListener("scroll",()=>tt.classList.toggle("show",scrollY>900),{passive:true});
+  tt.addEventListener("click",()=>scrollTo({top:0,behavior:"smooth"}));
+  if(window.Motion){
+    const {animate,inView}=Motion, EASE=[.22,1,.36,1];
+    animate("header .bar > *",{opacity:[0,1],y:[-10,0]},{duration:.5,delay:Motion.stagger(.08),ease:EASE});
+    animate(".notice",{opacity:[0,1],y:[14,0]},{duration:.55,delay:.25,ease:EASE});
+    document.querySelectorAll(".part-div,.ch-div").forEach(d=>{
+      d.style.opacity=0;
+      inView(d,()=>{animate(d,{opacity:[0,1],y:[20,0]},{duration:.55,ease:EASE});},{amount:.35});
+    });
+  }
 })();
-</script>
-<script type="module">
-import * as pdfjs from "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.min.mjs";
-pdfjs.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs";
-
-const cv = document.getElementById("cv"), ctx = cv.getContext("2d");
-const loading = document.getElementById("loading");
-const inp = document.getElementById("pageno"), tot = document.getElementById("total");
-const prev = document.getElementById("prev"), next = document.getElementById("next");
-
-const params = new URLSearchParams(location.search);
-let cur = Math.max(1, parseInt(params.get("page") || "1", 10) || 1);
-let doc = null, rendering = false, pending = null;
-
-const fa = n => String(n).replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
-
-async function render(n) {
-  if (!doc) return;
-  n = Math.min(Math.max(1, n), doc.numPages);
-  if (rendering) { pending = n; return; }
-  rendering = true; cur = n;
-  inp.value = n;
-  prev.disabled = n <= 1; next.disabled = n >= doc.numPages;
-  history.replaceState(null, "", "?page=" + n);
-  const page = await doc.getPage(n);
-  const cssW = Math.min(900, document.documentElement.clientWidth - 24);
-  const base = page.getViewport({ scale: 1 });
-  const scale = (cssW / base.width) * (window.devicePixelRatio > 1 ? 2 : 1.5);
-  const vp = page.getViewport({ scale });
-  cv.width = vp.width; cv.height = vp.height;
-  cv.style.width = cssW + "px";
-  await page.render({ canvasContext: ctx, viewport: vp }).promise;
-  loading.style.display = "none";
-  if (window.Motion) Motion.animate(cv, { opacity: [.45, 1], y: [6, 0] }, { duration: .3, ease: "easeOut" });
-  rendering = false;
-  if (pending !== null && pending !== cur) { const p = pending; pending = null; render(p); }
-  else pending = null;
-}
-
-try {
-  doc = await pdfjs.getDocument("../pdf/TypeScript-Persian-Guide.pdf").promise;
-  tot.textContent = "/ " + doc.numPages;
-  render(cur);
-} catch (e) {
-  loading.innerHTML = 'بارگذاری ناموفق بود — <a style="color:#E3B341" href="../pdf/TypeScript-Persian-Guide.pdf">PDF را دانلود کنید</a>';
-}
-
-prev.onclick = () => render(cur - 1);
-next.onclick = () => render(cur + 1);
-inp.onchange = () => render(parseInt(inp.value, 10) || 1);
-addEventListener("keydown", e => {
-  if (e.target === inp) return;
-  if (e.key === "ArrowLeft") render(cur + 1);   // RTL: چپ = جلو
-  if (e.key === "ArrowRight") render(cur - 1);
-});
-let rT; addEventListener("resize", () => { clearTimeout(rT); rT = setTimeout(() => render(cur), 200); });
-let tx = 0, ty = 0;
-addEventListener("touchstart", e => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
-addEventListener("touchend", e => {
-  const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
-  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) dx < 0 ? render(cur + 1) : render(cur - 1);
-}, { passive: true });
 </script>
 </body>
 </html>
