@@ -8,26 +8,26 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%233178C6'/><text x='32' y='44' font-size='32' font-weight='bold' font-family='monospace' fill='white' text-anchor='middle'>TS</text></svg>"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"/>
 <style>
-:root{--navy:#111A30;--ink:#18233F;--line:#273452;--gold:#E3B341;--mut:#8EA0BD}
+:root{--navy:#1C2642;--ink:#232F52;--line:#36436B;--gold:#E3B341;--mut:#9CACC8}
 .i{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.15em;flex-shrink:0}
 .i.f{fill:currentColor;stroke:none}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Vazirmatn,system-ui,sans-serif;background:var(--navy);color:#D6DEED;min-height:100vh;display:flex;flex-direction:column}
-header{position:sticky;top:0;z-index:10;background:rgba(17,26,48,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+body{font-family:Vazirmatn,system-ui,sans-serif;background:var(--navy);color:#DCE4F2;min-height:100vh;display:flex;flex-direction:column}
+header{position:sticky;top:0;z-index:10;background:rgba(30,41,72,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
 .bar{max-width:1000px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .bar a.home{color:var(--gold);font-weight:700;font-size:.9rem}
 .bar .title{font-size:.85rem;color:var(--mut);margin-inline-end:auto}
 .nav{display:flex;align-items:center;gap:6px}
-button,.dl{border:1px solid var(--line);background:#131D36;color:#D6DEED;border-radius:9px;padding:6px 14px;font-family:inherit;font-size:.85rem;cursor:pointer;transition:.15s;text-decoration:none}
+button,.dl{border:1px solid var(--line);background:#2A3659;color:#DCE4F2;border-radius:9px;padding:6px 14px;font-family:inherit;font-size:.85rem;cursor:pointer;transition:.15s;text-decoration:none}
 button:hover,.dl:hover{border-color:var(--gold);color:var(--gold)}
 button:disabled{opacity:.35;cursor:default}
-#pageno{width:64px;text-align:center;border:1px solid var(--line);background:#0F1830;color:#fff;border-radius:9px;padding:6px 4px;font-family:inherit;font-size:.85rem;direction:ltr}
+#pageno{width:64px;text-align:center;border:1px solid var(--line);background:#242F52;color:#fff;border-radius:9px;padding:6px 4px;font-family:inherit;font-size:.85rem;direction:ltr}
 .total{font-size:.8rem;color:var(--mut);direction:ltr}
 main{flex:1;display:flex;justify-content:center;padding:18px 8px 40px}
 #stage{position:relative;max-width:100%}
 canvas{display:block;max-width:100%;height:auto!important;border-radius:8px;box-shadow:0 18px 60px rgba(0,0,0,.5);background:#fff}
 #loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--mut);font-size:.9rem}
-.hint{text-align:center;font-size:.72rem;color:#667085;padding-bottom:18px}
+.hint{text-align:center;font-size:.72rem;color:#7D8BA6;padding-bottom:18px}
 @media(max-width:640px){
   .bar{padding:8px 10px;gap:6px}
   .bar .title{display:none}
@@ -68,7 +68,7 @@ canvas{display:block;max-width:100%;height:auto!important;border-radius:8px;box-
 </header>
 <main><div id="stage"><canvas id="cv"></canvas><div id="loading">در حال بارگذاری کتاب…</div></div></main>
 <p class="hint">پیمایش: دکمه‌ها، کلیدهای ← →، کشیدن انگشت (موبایل) یا وارد کردن شماره صفحه</p>
-<footer style="border-top:1px solid var(--line);background:#0D1527;padding:16px 12px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:.74rem;color:#667085">
+<footer style="border-top:1px solid var(--line);background:#161F38;padding:16px 12px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:.74rem;color:#7D8BA6">
   <span>© ۲۰۲۶ محمدرضا رضائیان</span>
   <a href="../" style="color:var(--mut);display:inline-flex;align-items:center;gap:5px"><svg class="i"><use href="#i-home"/></svg> صفحهٔ کتاب</a>
   <a href="https://github.com/rezaian-dev/typescript-persian-guide" style="color:var(--mut);display:inline-flex;align-items:center;gap:5px"><svg class="i f"><use href="#i-github"/></svg> GitHub</a>
