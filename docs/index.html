@@ -77,7 +77,12 @@ section{padding:72px 0}
 .card p code{background:#2A3659;border:1px solid var(--line);border-radius:5px;padding:.05em .4em;font-size:.84em;color:#9CC8F7}
 /* ───── path ───── */
 .path .cards{grid-template-columns:repeat(4,1fr)}
-.step .no{font-family:Vazirmatn,system-ui,sans-serif;font-size:1.6rem;color:rgba(227,179,65,.35);font-weight:700;direction:ltr}
+.step{padding-top:18px}
+.step .pimg{margin:-18px -24px 14px;border-radius:16px 16px 0 0;overflow:hidden;border-bottom:1px solid var(--line);position:relative}
+.step .pimg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(36,47,82,.55) 100%)}
+.step .pimg img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.step:hover .pimg img{transform:scale(1.06)}
+.step .no{margin-top:2px;font-family:Vazirmatn,system-ui,sans-serif;font-size:1.6rem;color:rgba(227,179,65,.35);font-weight:700;direction:ltr}
 .step .rng{font-size:.74rem;color:var(--gold2);margin-bottom:6px}
 .step .goal .i{color:var(--gold2);width:.9em;height:.9em}
 .step .goal{margin-top:10px;font-size:.78rem;color:#B9C6DC;border-top:1px dashed var(--line);padding-top:10px}
@@ -241,6 +246,8 @@ section[id],div[id].author{scroll-margin-top:76px}
   .stat .lbl{font-size:.74rem}
   .cards,.path .cards,.shots,.col-grid,.eds{grid-template-columns:1fr}
   .card,.ed{padding:22px 18px}
+  .step{padding-top:16px}
+  .step .pimg{margin:-16px -18px 12px}
   .btn{padding:11px 20px;font-size:.9rem}
   details.part summary{padding:14px 14px;font-size:.9rem;gap:9px}
   details.part summary .cnt{display:none}
@@ -409,10 +416,10 @@ section[id],div[id].author{scroll-margin-top:76px}
     <h2 class="sec">مسیر کتاب در چهار گام</h2>
     <p class="sec-sub">از مدل ذهنی تا انتشار پکیج تایپ‌شده؛ هر گام یک دستاورد ملموس دارد.</p>
     <div class="cards">
-      <div class="card step"><div class="no">01</div><h3><svg class="i"><use href="#i-sprout"/></svg> بنیادها و مدل ذهنی</h3><div class="rng">فصل‌های ۱ تا ۱۲</div><p>زنجیره ابزار، tsconfig، استنتاج، widening، structural typing، narrowing و توابع.</p><div class="goal"><svg class="i"><use href="#i-target"/></svg> پیش‌بینی رفتار کامپایلر به‌جای آزمون‌وخطا.</div></div>
-      <div class="card step"><div class="no">02</div><h3><svg class="i"><use href="#i-blocks"/></svg> طراحی نوع پیشرفته</h3><div class="rng">فصل‌های ۱۳ تا ۲۶</div><p>جنریک‌ها، conditional و mapped types، template literals، discriminated unions و variance.</p><div class="goal"><svg class="i"><use href="#i-target"/></svg> طراحی API هایی که اشتباه را غیرممکن می‌کنند.</div></div>
-      <div class="card step"><div class="no">03</div><h3><svg class="i"><use href="#i-building"/></svg> کامپایلر و معماری</h3><div class="rng">فصل‌های ۲۷ تا ۳۳</div><p>پرچم‌های strict، ماژول‌ها و resolution، مهاجرت JS→TS، monorepo و گذار TS 6→7.</p><div class="goal"><svg class="i"><use href="#i-target"/></svg> تسلط بر ابزار در مقیاس تیم و سازمان.</div></div>
-      <div class="card step"><div class="no">04</div><h3><svg class="i"><use href="#i-rocket"/></svg> سیستم‌های Production</h3><div class="rng">فصل‌های ۳۴ تا ۴۰</div><p>Zod، الگوی Result، ماشین حالت، React، fullstack type safety و انتشار پکیج.</p><div class="goal"><svg class="i"><use href="#i-target"/></svg> نوع‌ها به‌عنوان قرارداد مهندسی در کل سیستم.</div></div>
+      <div class="card step"><div class="pimg"><img src="path/step1.jpg" loading="lazy" alt="بنیادها و مدل ذهنی"/></div><div class="no">01</div><h3><svg class="i"><use href="#i-sprout"/></svg> بنیادها و مدل ذهنی</h3><div class="rng">فصل‌های ۱ تا ۱۲</div><p>زنجیره ابزار، tsconfig، استنتاج، widening، structural typing، narrowing و توابع.</p><div class="goal"><svg class="i"><use href="#i-target"/></svg> پیش‌بینی رفتار کامپایلر به‌جای آزمون‌وخطا.</div></div>
+      <div class="card step"><div class="pimg"><img src="path/step2.jpg" loading="lazy" alt="طراحی نوع پیشرفته"/></div><div class="no">02</div><h3><svg class="i"><use href="#i-blocks"/></svg> طراحی نوع پیشرفته</h3><div class="rng">فصل‌های ۱۳ تا ۲۶</div><p>جنریک‌ها، conditional و mapped types، template literals، discriminated unions و variance.</p><div class="goal"><svg class="i"><use href="#i-target"/></svg> طراحی API هایی که اشتباه را غیرممکن می‌کنند.</div></div>
+      <div class="card step"><div class="pimg"><img src="path/step3.jpg" loading="lazy" alt="کامپایلر و معماری"/></div><div class="no">03</div><h3><svg class="i"><use href="#i-building"/></svg> کامپایلر و معماری</h3><div class="rng">فصل‌های ۲۷ تا ۳۳</div><p>پرچم‌های strict، ماژول‌ها و resolution، مهاجرت JS→TS، monorepo و گذار TS 6→7.</p><div class="goal"><svg class="i"><use href="#i-target"/></svg> تسلط بر ابزار در مقیاس تیم و سازمان.</div></div>
+      <div class="card step"><div class="pimg"><img src="path/step4.jpg" loading="lazy" alt="سیستم‌های Production"/></div><div class="no">04</div><h3><svg class="i"><use href="#i-rocket"/></svg> سیستم‌های Production</h3><div class="rng">فصل‌های ۳۴ تا ۴۰</div><p>Zod، الگوی Result، ماشین حالت، React، fullstack type safety و انتشار پکیج.</p><div class="goal"><svg class="i"><use href="#i-target"/></svg> نوع‌ها به‌عنوان قرارداد مهندسی در کل سیستم.</div></div>
     </div>
   </div>
 </section>
