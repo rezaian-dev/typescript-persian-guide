@@ -14,7 +14,7 @@
 ![Interview](https://img.shields.io/badge/%D9%BE%D8%B1%D8%B3%D8%B4%20%D9%85%D8%B5%D8%A7%D8%AD%D8%A8%D9%87-%2B130-CA8A04?style=flat-square)
 ![Language](https://img.shields.io/badge/%D8%B2%D8%A8%D8%A7%D9%86-%D9%81%D8%A7%D8%B1%D8%B3%DB%8C-0A7E3D?style=flat-square)
 
-### [⬇️ دانلود PDF کتاب](TypeScript-Persian-Guide.pdf)
+### [🌐 نسخه آنلاین و دانلود](https://rezaian-dev.github.io/typescript-persian-guide/) · [⬇️ دانلود مستقیم PDF](TypeScript-Persian-Guide.pdf)
 
 </div>
 

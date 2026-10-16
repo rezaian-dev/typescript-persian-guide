@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>مطالعه آنلاین | مرجع جامع TypeScript</title>
+<meta name="description" content="نسخه آنلاین کتاب مرجع جامع TypeScript — ۲۲۰ صفحه، ۴۰ فصل"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%233178C6'/><text x='32' y='44' font-size='32' font-weight='bold' font-family='monospace' fill='white' text-anchor='middle'>TS</text></svg>"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"/>
+<style>
+:root{--navy:#111A30;--ink:#18233F;--line:#273452;--gold:#E3B341;--mut:#8EA0BD}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Vazirmatn,system-ui,sans-serif;background:var(--navy);color:#D6DEED;min-height:100vh;display:flex;flex-direction:column}
+header{position:sticky;top:0;z-index:10;background:rgba(17,26,48,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.bar{max-width:1000px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.bar a.home{color:var(--gold);font-weight:700;font-size:.9rem}
+.bar .title{font-size:.85rem;color:var(--mut);margin-inline-end:auto}
+.nav{display:flex;align-items:center;gap:6px}
+button,.dl{border:1px solid var(--line);background:#131D36;color:#D6DEED;border-radius:9px;padding:6px 14px;font-family:inherit;font-size:.85rem;cursor:pointer;transition:.15s;text-decoration:none}
+button:hover,.dl:hover{border-color:var(--gold);color:var(--gold)}
+button:disabled{opacity:.35;cursor:default}
+#pageno{width:64px;text-align:center;border:1px solid var(--line);background:#0F1830;color:#fff;border-radius:9px;padding:6px 4px;font-family:inherit;font-size:.85rem;direction:ltr}
+.total{font-size:.8rem;color:var(--mut);direction:ltr}
+main{flex:1;display:flex;justify-content:center;padding:18px 8px 40px}
+#stage{position:relative;max-width:100%}
+canvas{display:block;max-width:100%;height:auto!important;border-radius:8px;box-shadow:0 18px 60px rgba(0,0,0,.5);background:#fff}
+#loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--mut);font-size:.9rem}
+.hint{text-align:center;font-size:.72rem;color:#667085;padding-bottom:18px}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="home" href="../">⌂ صفحه کتاب</a>
+    <span class="title">مرجع جامع TypeScript — نسخه آنلاین</span>
+    <nav class="nav">
+      <button id="next">صفحه بعد ‹</button>
+      <input id="pageno" type="number" min="1" value="1" aria-label="شماره صفحه"/>
+      <span class="total" id="total">/ …</span>
+      <button id="prev">› صفحه قبل</button>
+      <a class="dl" href="../pdf/TypeScript-Persian-Guide.pdf" download>⬇ PDF</a>
+    </nav>
+  </div>
+</header>
+<main><div id="stage"><canvas id="cv"></canvas><div id="loading">در حال بارگذاری کتاب…</div></div></main>
+<p class="hint">پیمایش: دکمه‌ها، کلیدهای ← → یا وارد کردن شماره صفحه</p>
+
+<script type="module">
+import * as pdfjs from "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.min.mjs";
+pdfjs.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs";
+
+const cv = document.getElementById("cv"), ctx = cv.getContext("2d");
+const loading = document.getElementById("loading");
+const inp = document.getElementById("pageno"), tot = document.getElementById("total");
+const prev = document.getElementById("prev"), next = document.getElementById("next");
+
+const params = new URLSearchParams(location.search);
+let cur = Math.max(1, parseInt(params.get("page") || "1", 10) || 1);
+let doc = null, rendering = false, pending = null;
+
+const fa = n => String(n).replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+
+async function render(n) {
+  if (!doc) return;
+  n = Math.min(Math.max(1, n), doc.numPages);
+  if (rendering) { pending = n; return; }
+  rendering = true; cur = n;
+  inp.value = n;
+  prev.disabled = n <= 1; next.disabled = n >= doc.numPages;
+  history.replaceState(null, "", "?page=" + n);
+  const page = await doc.getPage(n);
+  const cssW = Math.min(900, document.documentElement.clientWidth - 24);
+  const base = page.getViewport({ scale: 1 });
+  const scale = (cssW / base.width) * (window.devicePixelRatio > 1 ? 2 : 1.5);
+  const vp = page.getViewport({ scale });
+  cv.width = vp.width; cv.height = vp.height;
+  cv.style.width = cssW + "px";
+  await page.render({ canvasContext: ctx, viewport: vp }).promise;
+  loading.style.display = "none";
+  rendering = false;
+  if (pending !== null && pending !== cur) { const p = pending; pending = null; render(p); }
+  else pending = null;
+}
+
+try {
+  doc = await pdfjs.getDocument("../pdf/TypeScript-Persian-Guide.pdf").promise;
+  tot.textContent = "/ " + doc.numPages;
+  render(cur);
+} catch (e) {
+  loading.innerHTML = 'بارگذاری ناموفق بود — <a style="color:#E3B341" href="../pdf/TypeScript-Persian-Guide.pdf">PDF را دانلود کنید</a>';
+}
+
+prev.onclick = () => render(cur - 1);
+next.onclick = () => render(cur + 1);
+inp.onchange = () => render(parseInt(inp.value, 10) || 1);
+addEventListener("keydown", e => {
+  if (e.target === inp) return;
+  if (e.key === "ArrowLeft") render(cur + 1);   // RTL: چپ = جلو
+  if (e.key === "ArrowRight") render(cur - 1);
+});
+let rT; addEventListener("resize", () => { clearTimeout(rT); rT = setTimeout(() => render(cur), 200); });
+</script>
+</body>
+</html>
