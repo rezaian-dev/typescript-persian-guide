@@ -11,7 +11,7 @@
 <meta property="og:type" content="book"/>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%233178C6'/><text x='32' y='44' font-size='32' font-weight='bold' font-family='monospace' fill='white' text-anchor='middle'>TS</text></svg>"/>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"/>
+
 <style>
 :root{
   --navy:#1C2642; --ink:#232F52; --panel:#242F52; --line:#36436B;
@@ -278,7 +278,13 @@ section[id],div[id].author{scroll-margin-top:76px}
   .ch .pg{display:none}
 }
 </style>
-</head>
+<style data-publication-typography>
+/* One font for every textual UI element, including Latin/Persian digits and controls. */
+@font-face{font-family:"Publication Vazirmatn";src:url("/typescript-persian-guide/fonts/Vazirmatn.woff2") format("woff2");font-style:normal;font-weight:100 900;font-display:swap}
+html,body,body *,body *::before,body *::after,body *::marker,body input::placeholder,body textarea::placeholder,body input::file-selector-button{font-family:"Publication Vazirmatn",sans-serif!important}
+html,body{--font-sans:"Publication Vazirmatn",sans-serif!important;--font-mono:"Publication Vazirmatn",sans-serif!important;--font-vazirmatn:"Publication Vazirmatn"!important;--font-jetbrains:"Publication Vazirmatn"!important}
+code,pre,kbd,samp{font-variant-ligatures:none}output,input[type=number],.tabular-nums{font-variant-numeric:tabular-nums}
+</style></head>
 <body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
